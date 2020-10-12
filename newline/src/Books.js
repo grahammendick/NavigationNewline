@@ -7,13 +7,17 @@ function Books() {
       .then(res => res.json())
       .then(setBooks)
   }, []);
-  return books.map(book => (
-    <div key={book.slug}>
-      <img src={book.cover} />
-      <div>{book.title}</div>
-      <div>{book.description}</div>
-    </div>
-  ));
+  return (
+    <ul>
+      {books.map(book => (
+        <li key={book.slug}>
+          <img src={book.cover} />
+          <div>{book.title}</div>
+          <div>{book.description}</div>
+        </li>
+      ))}
+    </ul>
+  );
 }
   
 export default Books;
