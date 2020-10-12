@@ -24,7 +24,6 @@ function Books({ page }) {
           </li>
         ))}
       </ul>
-      {total && <span>Go to page</span>}
       <ol>
         {Array(Math.ceil(total / 5)).fill(0).map((_, i) => (
           <li key={i}>

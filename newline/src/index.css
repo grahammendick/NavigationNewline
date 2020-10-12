@@ -34,8 +34,9 @@ ul li img{
 }
 ol {
   list-style: none;
-  display: inline-flex;
+  display: flex;
   padding: 0;
+  justify-content: center;
 }
 ol li {
   padding: 0 .5em;
