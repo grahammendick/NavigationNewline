@@ -15,7 +15,7 @@ ul {
 li {
   display: inline-block;
   width: 28.333333%;
-  padding: 0 2.5%;
+  padding: 2.5%;
   vertical-align: top;
 }
 li div {
@@ -32,13 +32,11 @@ li img{
 @media only screen and (max-width: 850px) {
   li {
     width: 45%;
-    padding: 0 2.5%;
   }
 }
 
 @media only screen and (max-width: 600px) {
   li {
     width: 95%;
-    padding: 0 2.5%;
   }
 }
