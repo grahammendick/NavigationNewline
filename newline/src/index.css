@@ -16,8 +16,7 @@ ul {
 li {
   display: inline-block;
   width: 28.333333%;
-  padding: 2.5%;
-  padding-bottom: 0;
+  padding: 1.5% 2.5%;
   vertical-align: top;
 }
 li div:first-of-type {
