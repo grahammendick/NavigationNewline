@@ -5,6 +5,7 @@ import { NavigationHandler } from 'navigation-react';
 import './index.css';
 import App from './App';
 import Welcome from './Welcome';
+import Books from './Books';
 import * as serviceWorker from './serviceWorker';
 
 const stateNavigator = new StateNavigator([
@@ -12,8 +13,9 @@ const stateNavigator = new StateNavigator([
   { key: 'books' },
 ]);
 
-const { welcome } = stateNavigator.states;
+const { welcome, books } = stateNavigator.states;
 welcome.renderView = () => <Welcome />;
+books.renderView = () => <Books />;
 
 stateNavigator.start();
 
