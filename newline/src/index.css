@@ -1,6 +1,8 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  max-width: 960px;
+  margin: 0 auto;
 }
 h1 {
   font-size: 1.4rem;
@@ -12,7 +14,6 @@ ul {
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -49,7 +50,7 @@ ol li {
 }
 
 @media only screen and (max-width: 600px) {
-  li {
+  ul li {
     width: 90%;
   }
 }
