@@ -28,7 +28,8 @@ li div {
   font-size: 0.8em;
 }
 li img{
-  max-width: 252px;
+  width: 252px;
+  height: 333px;
   box-shadow: rgb(203, 240, 255) 8px 8px 0px 0px;
 }
 
