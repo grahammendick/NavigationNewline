@@ -7,18 +7,16 @@ h1 {
 }
 h2 {
   font-size: 1.05rem;
-  flex: 1 100%;
 }
 ul {
   list-style: none;
   margin: 0 auto;
 }
 li {
-  float: left;
-  display: flex;
-  flex-wrap: wrap;
+  display: inline-block;
   width: 28.333333%;
   padding: 0 2.5%;
+  vertical-align: top;
 }
 li div {
   font-style: italic;
@@ -29,4 +27,18 @@ li img{
   width: 252px;
   height: 329px;
   box-shadow: rgb(203, 240, 255) 8px 8px 0px 0px;
+}
+
+@media only screen and (max-width: 850px) {
+  li {
+    width: 45%;
+    padding: 0 2.5%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  li {
+    width: 95%;
+    padding: 0 2.5%;
+  }
 }
