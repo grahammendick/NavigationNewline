@@ -78,7 +78,11 @@ const books = [
 ]
 
 app.get('/api/books', (req, res) => {
-  return res.json(books);
+  const start = (req.query.page - 1) * 5;
+  return res.json({
+    books: books.slice(start, start + 5),
+    total: books.length
+  });
 });
 
 app.listen('3001');
