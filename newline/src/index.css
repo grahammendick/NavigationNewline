@@ -25,7 +25,6 @@ li div:first-of-type {
 li div:first-of-type div {
   font-style: italic;
   font-size: 0.8em;
-  width: 50%;
 }
 li div:first-of-type img{
   width: 252px;
