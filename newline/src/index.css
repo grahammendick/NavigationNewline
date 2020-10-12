@@ -17,24 +17,32 @@ ul {
   flex-wrap: wrap;
   justify-content: center;
 }
-li {
+ul li {
   width: 23.333333%;
   padding: 1.5% 5%;
   vertical-align: top;
   max-width: 252px;
 }
-li div {
+ul li div {
   font-style: italic;
   font-size: 0.8em;
 }
-li img{
+ul li img{
   width: 252px;
   height: 333px;
   box-shadow: rgb(203, 240, 255) 8px 8px 0px 0px;
 }
+ol {
+  list-style: none;
+  display: inline-flex;
+  padding: 0;
+}
+ol li {
+  padding: 0 .5em;
+}
 
 @media only screen and (max-width: 900px) {
-  li {
+  ul li {
     width: 40%;
   }
 }
