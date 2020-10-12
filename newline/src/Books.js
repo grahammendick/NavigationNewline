@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavigationLink } from 'navigation-react';
 
-function Books({ page = 1 }) {
+function Books({ page }) {
   const [books, setBooks] = useState([]);
   const [total, setTotal] = useState(0);
   useEffect(() => {
