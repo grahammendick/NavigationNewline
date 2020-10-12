@@ -10,7 +10,7 @@ import * as serviceWorker from './serviceWorker';
 
 const stateNavigator = new StateNavigator([
   { key: 'welcome', route: '' },
-  { key: 'books' },
+  { key: 'books', route: 'our-books+/{page}', defaults: { page: 1 } },
 ]);
 
 const { welcome, books } = stateNavigator.states;
