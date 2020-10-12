@@ -11,7 +11,7 @@ const books = [
   }
 ]
 
-app.get('/books', (req, res) => {
+app.get('/api/books', (req, res) => {
   return res.json(books);
 });
 
