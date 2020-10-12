@@ -21,13 +21,14 @@ li {
   width: 23.333333%;
   padding: 1.5% 5%;
   vertical-align: top;
+  max-width: 252px;
 }
 li div {
   font-style: italic;
   font-size: 0.8em;
 }
 li img{
-  max-width: 100%;
+  max-width: 252px;
   box-shadow: rgb(203, 240, 255) 8px 8px 0px 0px;
 }
 
