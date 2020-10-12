@@ -12,34 +12,33 @@ ul {
   list-style: none;
   margin: 0 auto;
   padding: 0;
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 li {
-  display: inline-block;
-  width: 28.333333%;
-  padding: 1.5% 2.5%;
+  width: 23.333333%;
+  padding: 1.5% 5%;
   vertical-align: top;
 }
-li div:first-of-type {
-  max-width: 252px;
-}
-li div:first-of-type div {
+li div {
   font-style: italic;
   font-size: 0.8em;
 }
-li div:first-of-type img{
-  width: 252px;
-  height: 329px;
+li img{
+  max-width: 100%;
   box-shadow: rgb(203, 240, 255) 8px 8px 0px 0px;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 900px) {
   li {
-    width: 45%;
+    width: 40%;
   }
 }
 
 @media only screen and (max-width: 600px) {
   li {
-    width: 95%;
+    width: 90%;
   }
 }
