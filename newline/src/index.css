@@ -1,3 +1,11 @@
 body {
   margin: 0;
 }
+ul {
+  list-style: none;
+  margin: 0 auto;
+}
+li {
+  float: left;
+  width: 33.333333%;
+}
