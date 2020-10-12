@@ -11,6 +11,7 @@ function Books() {
     <div key={book.slug}>
       <img src={book.cover} />
       <div>{book.title}</div>
+      <div>{book.description}</div>
     </div>
   ));
 }
