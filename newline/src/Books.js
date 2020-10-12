@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
-function Books() {
+function Books({ page = 1 }) {
   const [books, setBooks] = useState([]);
   useEffect(() => {
-    fetch('/api/books?page=1')
+    fetch(`/api/books?page=${page}`)
       .then(res => res.json())
       .then(({ books }) => setBooks(books))
   }, []);

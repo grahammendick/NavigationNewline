@@ -15,7 +15,7 @@ const stateNavigator = new StateNavigator([
 
 const { welcome, books } = stateNavigator.states;
 welcome.renderView = () => <Welcome />;
-books.renderView = () => <Books />;
+books.renderView = ({ page }) => <Books page={page} />;
 
 stateNavigator.start();
 
