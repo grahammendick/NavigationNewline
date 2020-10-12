@@ -13,7 +13,7 @@ function Books() {
       <ul>
         {books.map(book => (
           <li key={book.slug}>
-            <div className="book">
+            <div>
               <img src={book.cover} />
               <h2>{book.title}</h2>
               <div>{book.description}</div>
