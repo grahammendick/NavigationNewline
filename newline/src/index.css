@@ -1,5 +1,13 @@
 body {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  font-size: 1.4rem;
+}
+h2 {
+  font-size: 1.05rem;
+  flex: 1 100%;
 }
 ul {
   list-style: none;
@@ -7,5 +15,13 @@ ul {
 }
 li {
   float: left;
-  width: 33.333333%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 28.333333%;
+  padding: 0 2.5%;
+}
+li div {
+  font-style: italic;
+  font-size: 0.8em;
+  width: 50%;
 }

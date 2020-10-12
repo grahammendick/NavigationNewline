@@ -8,15 +8,18 @@ function Books() {
       .then(setBooks)
   }, []);
   return (
-    <ul>
-      {books.map(book => (
-        <li key={book.slug}>
-          <img src={book.cover} />
-          <div>{book.title}</div>
-          <div>{book.description}</div>
-        </li>
-      ))}
-    </ul>
+    <>
+      <h1>📗 Our Books</h1>
+      <ul>
+        {books.map(book => (
+          <li key={book.slug}>
+            <img src={book.cover} />
+            <h2>{book.title}</h2>
+            <div>{book.description}</div>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
   
