@@ -19,12 +19,15 @@ li {
   padding: 2.5%;
   vertical-align: top;
 }
-li div {
+div.book {
+  max-width: 252px;
+}
+div.book div {
   font-style: italic;
   font-size: 0.8em;
   width: 50%;
 }
-li img{
+div.book img{
   width: 252px;
   height: 329px;
   box-shadow: rgb(203, 240, 255) 8px 8px 0px 0px;
