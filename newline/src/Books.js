@@ -17,7 +17,7 @@ function Books({ page, title = '' }) {
         setTotal(total);
         setFilter(title);
       })
-  }, [ page, title ]);
+  }, [page, title]);
   return (
     <>
       <h1>Our Books</h1>
