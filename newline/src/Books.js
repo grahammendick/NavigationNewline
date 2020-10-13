@@ -7,7 +7,9 @@ function Books({ page, title = '' }) {
   const [filter, setFilter] = useState('');
   const { stateNavigator } = useContext(NavigationContext);
   useEffect(() => {
-    fetch(`/api/books?page=${page}&title=${encodeURIComponent(title)}`)
+    fetch(`/api/books?`
+      + `page=${encodeURIComponent(page)}`
+      + `&title=${encodeURIComponent(title)}`)
       .then(res => res.json())
       .then(({ books, total }) => {
         setBooks(books);
