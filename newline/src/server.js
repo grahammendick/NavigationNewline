@@ -78,10 +78,14 @@ const books = [
 ]
 
 app.get('/api/books', (req, res) => {
-  const start = (req.query.page - 1) * 5;
+  const { page, title } = req.query;
+  const filteredBooks = books.filter(book => (
+    !title || book.title.toLowerCase().indexOf(title.toLowerCase()) !== -1
+  ));
+  const start = (page - 1) * 5;
   return res.json({
-    books: books.slice(start, start + 5),
-    total: books.length
+    books: filteredBooks.slice(start, start + 5),
+    total: filteredBooks.length
   });
 });
 
