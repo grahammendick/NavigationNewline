@@ -40,8 +40,7 @@ function Books({ page, title = '' }) {
           <li key={i}>
             <NavigationLink
               stateKey="books"
-              navigationData={{ page: i + 1 }}
-              includeCurrentData={true}
+              navigationData={{ page: i + 1, title }}
               disableActive={true}>
               {i + 1}
             </NavigationLink>
