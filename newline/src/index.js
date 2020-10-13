@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HTML5HistoryManager, StateNavigator } from 'navigation';
-import { NavigationHandler } from 'navigation-react';
+import {HTML5HistoryManager, StateNavigator} from 'navigation';
+import {NavigationHandler} from 'navigation-react';
 import './index.css';
 import App from './App';
 import Welcome from './Welcome';

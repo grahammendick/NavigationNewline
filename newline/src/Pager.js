@@ -1,5 +1,5 @@
 import React from 'react';
-import { RefreshLink } from 'navigation-react';
+import {RefreshLink} from 'navigation-react';
 
 function Pager({total}) {
   return (
