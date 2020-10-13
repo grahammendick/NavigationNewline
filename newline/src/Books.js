@@ -15,6 +15,10 @@ function Books({ page }) {
   return (
     <>
       <h1>📗 Our Books</h1>
+      <form onSubmit={() => false}>
+        <input type="text"/>
+        <button type="submit">Search</button>
+      </form>
       <ul>
         {books.map(book => (
           <li key={book.slug}>
