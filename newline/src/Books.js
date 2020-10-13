@@ -20,7 +20,7 @@ function Books({ page, title = '' }) {
   return (
     <>
       <h1>Our Books</h1>
-      <form onSubmit={() => false}>
+      <form onSubmit={event => event.preventDefault()}>
         <input type="text" value={filter} onChange={event => {
           setFilter(event.target.value)
         }} />

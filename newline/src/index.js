@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { StateNavigator } from 'navigation';
+import { HTML5HistoryManager, StateNavigator } from 'navigation';
 import { NavigationHandler } from 'navigation-react';
 import './index.css';
 import App from './App';
@@ -11,7 +11,7 @@ import * as serviceWorker from './serviceWorker';
 const stateNavigator = new StateNavigator([
   { key: 'welcome', route: '' },
   { key: 'books', route: 'our-books+/{page}', defaults: { page: 1 } },
-]);
+], new HTML5HistoryManager());
 
 const { welcome, books } = stateNavigator.states;
 welcome.renderView = () => <Welcome />;
