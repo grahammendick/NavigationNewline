@@ -1,7 +1,7 @@
 import React from 'react';
 import { RefreshLink } from 'navigation-react';
 
-function Pager({ total }) {
+function Pager({total}) {
   return (
     <ol>
       {Array(Math.ceil(total / 5)).fill(0).map((_, i) => (

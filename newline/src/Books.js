@@ -2,17 +2,17 @@ import React, { useEffect, useState, useContext } from 'react';
 import { RefreshLink, NavigationContext } from 'navigation-react';
 import Pager from './Pager';
 
-function Books({ page, title = '' }) {
+function Books({page, title = ''}) {
   const [books, setBooks] = useState([]);
   const [total, setTotal] = useState(0);
   const [filter, setFilter] = useState('');
-  const { stateNavigator } = useContext(NavigationContext);
+  const {stateNavigator} = useContext(NavigationContext);
   useEffect(() => {
     fetch(`/api/books?`
       + `page=${encodeURIComponent(page)}`
       + `&title=${encodeURIComponent(title)}`)
       .then(res => res.json())
-      .then(({ books, total }) => {
+      .then(({books, total}) => {
         setBooks(books);
         setTotal(total);
         setFilter(title);
@@ -26,7 +26,7 @@ function Books({ page, title = '' }) {
           setFilter(event.target.value)
         }} />
         <button type="submit" onClick={() => {
-          stateNavigator.refresh({ title: filter, page: 1 })
+          stateNavigator.refresh({title: filter, page: 1})
         }}>Search</button>
       </form>
       <ul>

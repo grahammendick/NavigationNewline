@@ -9,13 +9,13 @@ import Books from './Books';
 import * as serviceWorker from './serviceWorker';
 
 const stateNavigator = new StateNavigator([
-  { key: 'welcome', route: '' },
-  { key: 'books', route: 'our-books+/{page}', defaults: { page: 1 }, trackTypes: false },
+  {key: 'welcome', route: ''},
+  {key: 'books', route: 'our-books+/{page}', defaults: {page: 1}, trackTypes: false},
 ], new HTML5HistoryManager());
 
 const { welcome, books } = stateNavigator.states;
 welcome.renderView = () => <Welcome />;
-books.renderView = ({ page, title }) => <Books page={page} title={title} />;
+books.renderView = ({page, title}) => <Books page={page} title={title} />;
 
 stateNavigator.start();
 
