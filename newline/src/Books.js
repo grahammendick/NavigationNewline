@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { NavigationLink, NavigationContext } from 'navigation-react';
+import { RefreshLink, NavigationContext } from 'navigation-react';
 
 function Books({ page, title = '' }) {
   const [books, setBooks] = useState([]);
@@ -40,12 +40,12 @@ function Books({ page, title = '' }) {
       <ol>
         {Array(Math.ceil(total / 5)).fill(0).map((_, i) => (
           <li key={i}>
-            <NavigationLink
-              stateKey="books"
-              navigationData={{ page: i + 1, title }}
+            <RefreshLink
+              navigationData={{ page: i + 1 }}
+              includeCurrentData={true}
               disableActive={true}>
               {i + 1}
-            </NavigationLink>
+            </RefreshLink>
           </li>
         ))}
       </ol>
