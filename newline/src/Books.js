@@ -19,7 +19,7 @@ function Books({ page, title = '' }) {
   }, [ page, title ]);
   return (
     <>
-      <h1>📗 Our Books</h1>
+      <h1>Our Books</h1>
       <form onSubmit={() => false}>
         <input type="text" value={filter} onChange={event => {
           setFilter(event.target.value)
@@ -31,7 +31,7 @@ function Books({ page, title = '' }) {
       <ul>
         {books.map(book => (
           <li key={book.slug}>
-            <img src={book.cover} />
+            <img src={book.cover} alt={book.title} />
             <h2>{book.title}</h2>
             <div>{book.description}</div>
           </li>
