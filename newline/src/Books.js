@@ -25,7 +25,7 @@ function Books({ page, title = '' }) {
           setFilter(event.target.value)
         }} />
         <button type="submit" onClick={() => {
-          stateNavigator.navigate('books', { title: filter, page: 1 })
+          stateNavigator.refresh({ title: filter, page: 1 })
         }}>Search</button>
       </form>
       <ul>
