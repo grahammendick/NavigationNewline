@@ -1,23 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { NavigationLink } from 'navigation-react';
+import React, { useEffect, useState, useContext } from 'react';
+import { NavigationLink, NavigationContext } from 'navigation-react';
 
-function Books({ page }) {
+function Books({ page, title = '' }) {
   const [books, setBooks] = useState([]);
   const [total, setTotal] = useState(0);
+  const [filter, setFilter] = useState(title);
+  const { stateNavigator } = useContext(NavigationContext);
   useEffect(() => {
-    fetch(`/api/books?page=${page}`)
+    fetch(`/api/books?page=${page}&title=${title}`)
       .then(res => res.json())
       .then(({ books, total }) => {
         setBooks(books);
         setTotal(total);
+        setFilter(title);
       })
-  }, [ page ]);
+  }, [ page, title ]);
   return (
     <>
       <h1>📗 Our Books</h1>
       <form onSubmit={() => false}>
-        <input type="text"/>
-        <button type="submit">Search</button>
+        <input type="text" value={filter} onChange={event => {
+          setFilter(event.target.value)
+        }} />
+        <button type="submit" onClick={() => {
+          stateNavigator.navigate('books', { title: filter, page })
+        }}>Search</button>
       </form>
       <ul>
         {books.map(book => (
