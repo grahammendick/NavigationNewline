@@ -10,7 +10,7 @@ import * as serviceWorker from './serviceWorker';
 
 const stateNavigator = new StateNavigator([
   { key: 'welcome', route: '' },
-  { key: 'books', route: 'our-books+/{page}', defaults: { page: 1 } },
+  { key: 'books', route: 'our-books+/{page}', defaults: { page: 1 }, trackTypes: false },
 ], new HTML5HistoryManager());
 
 const { welcome, books } = stateNavigator.states;
