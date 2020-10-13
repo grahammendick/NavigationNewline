@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { RefreshLink, NavigationContext } from 'navigation-react';
+import { NavigationContext } from 'navigation-react';
 import Pager from './Pager';
 
 function Books({page, title = ''}) {
