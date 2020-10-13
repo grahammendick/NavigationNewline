@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { NavigationLink, NavigationContext } from 'navigation-react';
 
-function Books({ page, title = '' }) {
+function Books({ page, title }) {
   const [books, setBooks] = useState([]);
   const [total, setTotal] = useState(0);
-  const [filter, setFilter] = useState(title);
+  const [filter, setFilter] = useState('');
   const { stateNavigator } = useContext(NavigationContext);
   useEffect(() => {
-    fetch(`/api/books?page=${page}&title=${title}`)
+    fetch(`/api/books?page=${page}&title=${title || ''}`)
       .then(res => res.json())
       .then(({ books, total }) => {
         setBooks(books);
