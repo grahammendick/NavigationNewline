@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { RefreshLink, NavigationContext } from 'navigation-react';
+import Pager from './Pager';
 
 function Books({ page, title = '' }) {
   const [books, setBooks] = useState([]);
@@ -37,20 +38,9 @@ function Books({ page, title = '' }) {
           </li>
         ))}
       </ul>
-      <ol>
-        {Array(Math.ceil(total / 5)).fill(0).map((_, i) => (
-          <li key={i}>
-            <RefreshLink
-              navigationData={{ page: i + 1 }}
-              includeCurrentData={true}
-              disableActive={true}>
-              {i + 1}
-            </RefreshLink>
-          </li>
-        ))}
-      </ol>
+      <Pager total={total} />
     </>
   );
 }
-  
+
 export default Books;
