@@ -336,6 +336,50 @@ const books = [
         photo: 'https://d8dgeb1f3fxgw.cloudfront.net/static/img/books/d3/author/amelia.png',
         bio: `I'm a front-end developer and designer with a background in neuroscientific research.\nOver the past ten years that I've been visualizing data, I've been perfecting my method and collecting helpful tricks. I'm here to jump-start your own journey!\nIn Fullstack D3 and Data Visualization, I distill my hard-earned knowledge into bite-sized lessons. We'll start making charts right away, and learn new concepts and design theory as we go.`
       },
+    ],
+    chapters: [
+      {
+        title: 'Making your First Chart',
+      },
+      {
+        title: 'Making a Scatterplot',
+      },
+      {
+        title: 'Making a Bar Chart',
+      },
+      {
+        title: 'Animations and Transitions',
+      },
+      {
+        title: 'Interactions',
+      },
+      {
+        title: 'Making a Map',
+      },
+      {
+        title: 'Data Visualization Basics',
+      },
+      {
+        title: 'Common charts',
+      },
+      {
+        title: 'Dashboard Design',
+      },
+      {
+        title: 'Marginal Histogram',
+      },
+      {
+        title: 'Radial Weather Chart',
+      },
+      {
+        title: 'Animated Sankey Diagram',
+      },
+      {
+        title: 'D3 and React.js',
+      },
+      {
+        title: 'D3 and Angular',
+      },
     ]
   },
   {
