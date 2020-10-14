@@ -75,6 +75,7 @@ ul.books li img {
   clear: left;
   font-size: 1.7em;
   padding: 3% 0;
+  width: 65%;
 }
 .authors {
   clear: both;
