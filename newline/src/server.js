@@ -29,9 +29,13 @@ const books = [
     authors: [
       {
         name: 'Maksim Ivanov',
+        photo: 'https://pbs.twimg.com/profile_images/1094326896547033088/ebuYQR8s_bigger.jpg',
+        bio: `Frontend developer at @mojang, working on @minecraft. Took part in @Battlefield development at @ea_dice. Teacher at @loftschool. Speaker`
       },
       {
         name: 'Alex Bespoyasov',
+        photo: 'https://pbs.twimg.com/profile_images/1310853831929090048/TXl02KJZ_200x200.jpg',
+        bio: `Sometimes I write, sometimes I don't.`
       },
     ]
   },
