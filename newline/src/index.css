@@ -72,6 +72,9 @@ ul.authors li img{
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 10px;
 }
 ol {
   list-style: none;
