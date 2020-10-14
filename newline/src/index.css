@@ -112,6 +112,11 @@ h2 span::before {
   display: flex;
   flex-wrap: wrap;
 }
+.authors li {
+  flex: 1 1 50%;
+  padding: 0 3% 3% 0;
+  box-sizing: border-box;
+}
 .authors li div {
   font-style: normal;
   white-space: pre-wrap;
