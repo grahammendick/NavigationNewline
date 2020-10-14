@@ -14,7 +14,9 @@ function Book({slug}) {
       <div>{book.description}</div>
       <div className="authors">
         <h2>
-          <span>Meet the Authors</span>
+          <span>
+            {`Meet the Author${book.authors.length > 1 ? 's' : ''}`}
+          </span>
         </h2>
         <ul>
           {book.authors.map(author => (
