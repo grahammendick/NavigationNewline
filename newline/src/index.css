@@ -62,6 +62,18 @@ ul.books li img {
   height: 333px;
   box-shadow: rgb(203, 240, 255) 8px 8px 0px 0px;
 }
+.book h1 {
+  float: left;
+  font-size: 4em;
+  margin: 0;
+  width: 65%;
+}
+.book > img {
+  float: right;
+}
+.authors {
+  clear: both;
+}
 .authors li h3 {
   font-size: 1.5em;
   line-height: 1.1;
