@@ -61,6 +61,17 @@ ul li img{
   height: 333px;
   box-shadow: rgb(203, 240, 255) 8px 8px 0px 0px;
 }
+ul.authors li div{
+  font-style: normal;
+  white-space: pre-wrap;
+  font-size: 1em;
+  line-height: 1.5;
+}
+ul.authors li img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
 ol {
   list-style: none;
   display: flex;
