@@ -291,6 +291,38 @@ const books = [
         photo: 'https://d8dgeb1f3fxgw.cloudfront.net/static/img/books/webdevfg/author/angel.jpg',
         bio: `Not until I was in my early thirties did I seriously consider becoming a web developer. In all honesty, I wasn’t even sure what it meant to work as a web developer. All I knew was that I wanted to work on computers (and I was attracted to the job opportunities).\nI started by reading articles and seeking advice from friends. I continued with more articles, books, and online courses, but I often found that blog posts made too many assumptions about what I knew and they didn't start at the very beginning.\nWithout knowing what to study (or how to study it) my path was convoluted, stressful, and inefficient. But it did not have to be.\nI wrote this book for the “me,” five years ago; for the person who is starting to think about what it might take to become a programmer or web developer.\nIn this book, I will cover the fundamentals. But more importantly, I will talk about why they are the fundamentals.\nMy goal is not to teach you a specific skill like HTML. Instead, I show you how to navigate what’s ahead of you. I get you set up for your next steps, whether that’s a path of self-learning or attending a bootcamp.\nBy the end of this book, you will be able to make an educated decision about your future and understand the steps and commitment it will take to get there.`
       },
+    ],
+    chapters: [
+      {
+        title: 'How to Get the Most Out of This Book',
+      },
+      {
+        title: 'Setup and Tooling',
+      },
+      {
+        title: 'What is a Web Page?',
+      },
+      {
+        title: 'Using CSS to Add Style',
+      },
+      {
+        title: 'JavaScript',
+      },
+      {
+        title: 'Programming Languages',
+      },
+      {
+        title: 'Terminal',
+      },
+      {
+        title: 'Git and Version Control',
+      },
+      {
+        title: 'Frontend and Backend Web Development',
+      },
+      {
+        title: 'The Web Developer\'s Field Guide',
+      },
     ]
   },
   {
