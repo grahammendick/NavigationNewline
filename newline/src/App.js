@@ -1,8 +1,8 @@
-import { useContext } from 'react';
-import { NavigationContext } from 'navigation-react';
+import {useContext} from 'react';
+import {NavigationContext} from 'navigation-react';
 
 function App() {
-  const { state, data } = useContext(NavigationContext);
+  const {state, data} = useContext(NavigationContext);
   return state.renderView(data);
 }
 
