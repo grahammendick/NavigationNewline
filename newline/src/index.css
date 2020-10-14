@@ -62,18 +62,43 @@ ul.books li img {
   height: 333px;
   box-shadow: rgb(203, 240, 255) 8px 8px 0px 0px;
 }
-ul.authors li h2 {
+ul.authors li h3 {
   font-size: 1.5em;
   line-height: 1.1;
   margin: 0 0 12px;
 }
-ul.authors li div {
+.book h2 {
+  position: relative;
+  margin: 0 auto;
+  display: inline-block;
+  font-size: 3em;
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(255, 255, 255);
+  text-shadow: rgba(0, 0, 0, 0.3) -4px 2px 0px;
+}
+h2 span::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -45px;
+  right: -45px;
+  height: 60px;
+  background: rgb(255, 149, 197);
+  transform: rotate(-2deg);  
+  z-index: -1;
+}
+.authors {
+  display: flex;
+  flex-wrap: wrap;
+}
+.authors li div {
   font-style: normal;
   white-space: pre-wrap;
   font-size: 1em;
   line-height: 1.5;
 }
-ul.authors li img {
+.authors li img {
   width: 150px;
   height: 150px;
   border-radius: 50%;

@@ -8,19 +8,24 @@ function Book({slug}) {
       .then(setBook)
   }, [slug]);
   return book && (
-    <>      
+    <div className="book">
       <h1>{book.title}</h1>
       <img src={book.cover} alt={book.title} />
-      <ul className="authors">
-        {book.authors.map(author => (
-          <li key={author.name}>
-            <img src={author.photo} alt={author.name} />
-            <h2>{author.name}</h2>
-            <div>{author.bio}</div>
-          </li>
-        ))}
-      </ul>
-    </>
+      <div className="authors">
+        <h2>
+          <span>Meet the Authors</span>
+        </h2>
+        <ul>
+          {book.authors.map(author => (
+            <li key={author.name}>
+              <img src={author.photo} alt={author.name} />
+              <h3>{author.name}</h3>
+              <div>{author.bio}</div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 }
 
