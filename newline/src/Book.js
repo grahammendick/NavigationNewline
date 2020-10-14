@@ -11,6 +11,15 @@ function Book({slug}) {
     <>      
       <h1>{book.title}</h1>
       <img src={book.cover} alt={book.title} />
+      <ul>
+        {book.authors.map(author => (
+          <li key={author.name}>
+            <h2>{author.name}</h2>
+            <img src={author.photo} alt={author.name} />
+            <div>{author.bio}</div>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
