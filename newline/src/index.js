@@ -1,28 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {HTML5HistoryManager, StateNavigator} from 'navigation';
 import {NavigationHandler} from 'navigation-react';
 import './index.css';
 import App from './App';
-import Welcome from './Welcome';
-import Books from './Books';
-import Tutorials from './Tutorials';
-import Book from './Book';
+import createStateNavigator from './createStateNavigator';
 import * as serviceWorker from './serviceWorker';
 
-const stateNavigator = new StateNavigator([
-  {key: 'welcome', route: '', trackTypes: false},
-  {key: 'books', route: 'our-books+/{page}', defaults: {page: 1}, trackTypes: false},
-  {key: 'tutorials', route: 'our-tutorials', defaults: {page: 1}, trackTypes: false},
-  {key: 'book'},
-], new HTML5HistoryManager());
-
-const {welcome, books, tutorials, book} = stateNavigator.states;
-welcome.renderView = () => <Welcome />;
-books.renderView = ({page, title}) => <Books page={page} title={title} />;
-tutorials.renderView = ({page}) => <Tutorials page={page} />;
-book.renderView = () => <Book />;
-
+const stateNavigator = createStateNavigator();
 stateNavigator.start();
 
 ReactDOM.render(
