@@ -15,7 +15,6 @@ function Books({page, title = ''}) {
       .then(({books, total}) => {
         setBooks(books);
         setTotal(total);
-        setFilter(title);
       })
   }, [page, title]);
   return (
