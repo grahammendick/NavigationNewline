@@ -14,8 +14,8 @@ function Book({slug}) {
       <ul className="authors">
         {book.authors.map(author => (
           <li key={author.name}>
-            <h2>{author.name}</h2>
             <img src={author.photo} alt={author.name} />
+            <h2>{author.name}</h2>
             <div>{author.bio}</div>
           </li>
         ))}

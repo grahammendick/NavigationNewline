@@ -57,18 +57,23 @@ ul.books li div {
   font-style: italic;
   font-size: 0.8em;
 }
-ul.books li img{
+ul.books li img {
   width: 252px;
   height: 333px;
   box-shadow: rgb(203, 240, 255) 8px 8px 0px 0px;
 }
-ul.authors li div{
+ul.authors li h2 {
+  font-size: 1.5em;
+  line-height: 1.1;
+  margin: 0 0 12px;
+}
+ul.authors li div {
   font-style: normal;
   white-space: pre-wrap;
   font-size: 1em;
   line-height: 1.5;
 }
-ul.authors li img{
+ul.authors li img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
