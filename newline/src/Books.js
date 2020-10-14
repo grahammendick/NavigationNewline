@@ -5,7 +5,7 @@ import Pager from './Pager';
 function Books({page, title = ''}) {
   const [books, setBooks] = useState([]);
   const [total, setTotal] = useState(0);
-  const [filter, setFilter] = useState('');
+  const [filter, setFilter] = useState(title);
   const {stateNavigator} = useContext(NavigationContext);
   useEffect(() => {
     fetch(`/api/books?page=${encodeURIComponent(page)}`
@@ -14,7 +14,6 @@ function Books({page, title = ''}) {
       .then(({books, total}) => {
         setBooks(books);
         setTotal(total);
-        setFilter(title);
       })
   }, [page, title]);
   return (
