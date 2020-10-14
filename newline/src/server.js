@@ -244,6 +244,40 @@ const books = [
         photo: 'https://d8dgeb1f3fxgw.cloudfront.net/static/img/books/fullstack-node/david-guttman.png',
         bio: `He's run JS.LA for 8 years (It's one of the largest JavaScript Meetup groups)\nHe's on the Official Node.js Mentorship Team\nHe runs the NodeSchool Los Angeles Chapter\n...and he's built production Node servers that handle 10 billion+ requests per day\nIn Fullstack Node.js, David shares with you his code structure, practices, and styles so that you can build your own high-performance Node.js servers.`
       },
+    ],
+    chapters: [
+      {
+        title: 'Your First Node.js API',
+        sections: ['Hello Node.js', 'When Node.js May Not Be the Best Choice', 'Your First Node.js API']
+      },
+      {
+        title: 'Mastering Async in Node.js',
+        sections: ['Callbacks vs. Promises', 'Using Async and Await', 'Event Emitters and Streams']
+      },
+      {
+        title: 'Creating a Complete Node.js Server',
+        sections: ['Modularizing Node Code', 'Filtering with Query Parameters', 'Using POST, PUT, and DELETE']
+      },
+      {
+        title: 'Persisting and Storing Data in Node.js',
+        sections: ['Using a Database', 'Model Relationships', 'Handling File Uploads']
+      },
+      {
+        title: 'Users and Authentication',
+        sections: ['Private Endpoints', 'Authentication with Passport', 'JWT Tokens and Authorization']
+      },
+      {
+        title: 'Deploying a Node.js App',
+        sections: ['Production Considerations', 'Health checks, logging, and security', 'Using a Platform as a Service']
+      },
+      {
+        title: 'Building Command Line (CLI) Apps',
+        sections: ['Building a CLI with yargs', 'Rich CLI Login Flows', 'Building a CLI for our Server']
+      },
+      {
+        title: 'Testing Node.js Apps',
+        sections: ['Testing Frameworks', 'Unit vs. E2E Tests', 'Writing Robust Tests']
+      },
     ]
   },
   {
