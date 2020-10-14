@@ -201,6 +201,36 @@ const books = [
         photo: 'https://d8dgeb1f3fxgw.cloudfront.net/static/img/books/fullstack-rust/andrew-weiss@1x.jpg',
         bio: `I started my career as a Data Scientist and Software Engineer at Facebook before becoming the first engineer at Flexport.\nI began working with Rust as a hobby before putting it into production while at Rollbar. I'm now working on Fuchsia at Google. In my work, I try to mix the academic rigor from a PhD at Princeton with pragmatism learned from shipping products at companies big and small.\nIn Fullstack Rust I've put together a book that will show you how to use the Rust ecosystem to build fast, secure, apps and tools.`
       },
+    ],
+    chapters: [
+      {
+        title: 'Your First Rust App',
+        sections: ['Getting Started With Rust', 'Making Our First Crate', 'Testing Our Code']
+      },
+      {
+        title: 'Making A Web App With Actix',
+        sections: ['Rust Web Ecosystem', 'Handling Requests', 'Understanding Rust Closures']
+      },
+      {
+        title: 'Adding State To Our App',
+        sections: ['Effectively Working with Locks', 'Custom Error Handling', 'Handling Path Variables']
+      },
+      {
+        title: 'ORMs with Diesel',
+        sections: ['The Diesel CLI', 'Migrations', 'How to Organize Your Code']
+      },
+      {
+        title: 'Web Assembly (Wasm) and Rust',
+        sections: ['Rust in the Browser', 'The Smallest Wasm Library', 'The Real Way to Write Wasm']
+      },
+      {
+        title: 'Command-Line Rust Applications',
+        sections: ['Building an MVP', 'Adding Configuration Files', 'Adding Sessions']
+      },
+      {
+        title: 'Rust Macros',
+        sections: ['Declarative Macros', 'Procedural Macros', 'Writing a Custom Derive']
+      },
     ]
   },
   {
