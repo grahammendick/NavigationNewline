@@ -29,7 +29,7 @@ ul {
   flex-wrap: wrap;
   justify-content: center;
 }
-ul li {
+ul.books li {
   width: 23.333333%;
   padding: 1.5% 5%;
   vertical-align: top;
@@ -44,6 +44,7 @@ ul.tutorials li {
   height: 200px;
   box-sizing: border-box;
   box-shadow: rgb(203, 240, 255) 8px 8px 0px 0px;
+  max-width: 252px;
 }
 ul.tutorials li h2 {
   height: 70%;
@@ -52,11 +53,11 @@ ul.tutorials li div {
   font-style: normal;
   font-size: 0.6em;
 }
-ul li div {
+ul.books li div {
   font-style: italic;
   font-size: 0.8em;
 }
-ul li img{
+ul.books li img{
   width: 252px;
   height: 333px;
   box-shadow: rgb(203, 240, 255) 8px 8px 0px 0px;
@@ -83,7 +84,7 @@ ol li {
 }
 
 @media only screen and (max-width: 900px) {
-  ul li {
+  ul.books li {
     width: 40%;
   }
   ul.tutorials li {
@@ -92,7 +93,7 @@ ol li {
 }
 
 @media only screen and (max-width: 600px) {
-  ul li {
+  ul.books li {
     width: 90%;
   }
   ul.tutorials li {

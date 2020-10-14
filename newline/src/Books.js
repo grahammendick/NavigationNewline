@@ -28,7 +28,7 @@ function Books({page, title = ''}) {
           stateNavigator.refresh({title: filter, page: 1})
         }}>Search</button>
       </form>
-      <ul>
+      <ul className="books">
         {books.map(book => (
           <li key={book.slug}>
             <NavigationLink
