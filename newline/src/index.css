@@ -149,6 +149,9 @@ ol li {
   ul.tutorials li {
     width: 50%;
   }
+  .book h1, .book > div:first-of-type {
+    width: 40%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -157,5 +160,12 @@ ol li {
   }
   ul.tutorials li {
     width: 100%;
+  }
+  .book h1, .book > div:first-of-type {
+    width: 100%;
+  }
+  .book h1, .book > div:first-of-type, .book > img {
+    clear: both;
+    float: none;
   }
 }
