@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "acumin-pro", "acumin-pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   max-width: 960px;
   margin: 0 auto;
   padding: 1% 2%;
@@ -62,14 +62,14 @@ ul.books li img {
   height: 333px;
   box-shadow: rgb(203, 240, 255) 8px 8px 0px 0px;
 }
-ul.authors li h3 {
+.authors li h3 {
   font-size: 1.5em;
   line-height: 1.1;
   margin: 0 0 12px;
 }
 .book h2 {
   position: relative;
-  margin: 0 auto;
+  margin: 25px auto;
   display: inline-block;
   font-size: 3em;
   font-weight: bold;
@@ -97,6 +97,7 @@ h2 span::before {
   white-space: pre-wrap;
   font-size: 1em;
   line-height: 1.5;
+  font-weight: 300;
 }
 .authors li img {
   width: 150px;
