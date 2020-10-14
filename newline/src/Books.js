@@ -1,5 +1,5 @@
 import React, {useEffect, useState, useContext} from 'react';
-import {NavigationContext} from 'navigation-react';
+import {NavigationContext, NavigationLink} from 'navigation-react';
 import Pager from './Pager';
 
 function Books({page, title = ''}) {
@@ -32,7 +32,11 @@ function Books({page, title = ''}) {
       <ul>
         {books.map(book => (
           <li key={book.slug}>
-            <img src={book.cover} alt={book.title} />
+            <NavigationLink
+              stateKey="book"
+              navigationData={{slug: book.slug}}>
+              <img src={book.cover} alt={book.title} />
+            </NavigationLink>
             <h2>{book.title}</h2>
             <div>{book.description}</div>
           </li>
