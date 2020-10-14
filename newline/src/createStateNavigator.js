@@ -17,7 +17,7 @@ function createStateNavigator() {
   welcome.renderView = () => <Welcome />;
   books.renderView = ({page, title}) => <Books page={page} title={title} />;
   tutorials.renderView = ({page}) => <Tutorials page={page} />;
-  book.renderView = () => <Book />;
+  book.renderView = ({slug}) => <Book slug={slug} />;
   return stateNavigator;  
 }
 
