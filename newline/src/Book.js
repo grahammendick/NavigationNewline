@@ -11,6 +11,7 @@ function Book({slug}) {
     <div className="book">
       <h1>{book.title}</h1>
       <img src={book.cover} alt={book.title} />
+      <div>{book.description}</div>
       <div className="authors">
         <h2>
           <span>Meet the Authors</span>

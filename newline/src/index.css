@@ -71,6 +71,11 @@ ul.books li img {
 .book > img {
   float: right;
 }
+.book > div:first-of-type {
+  clear: left;
+  font-size: 1.7em;
+  padding: 3% 0;
+}
 .authors {
   clear: both;
 }
