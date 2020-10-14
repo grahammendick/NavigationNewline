@@ -19,6 +19,44 @@ const books = [
         photo: 'https://d8dgeb1f3fxgw.cloudfront.net/static/img/books/fullstack-graphql/roy-derks.jpg',
         bio: `I lead engineering teams at Vandebron and teach folks how to use React and GraphQL through conference speaking and writing.\nImplementing a flexible, optimized GraphQL server is tricky, but in this book, I'll show you how.`
       },
+    ],
+    chapters: [
+      {
+        title: 'Why GraphQL?',
+        sections: ['Usage-driven-fetching', 'Comparison vs. REST APIs']
+      },
+      {
+        title: 'Hello GraphQL',
+        sections: ['Using the Playground', 'First GraphQL Queries']
+      },
+      {
+        title: 'Basic GraphQL App Clients',
+        sections: ['GraphQL in Node.js', 'GraphQL in React']
+      },
+      {
+        title: 'Apollo Client and React',
+        sections: ['Setting up Apollo', 'React Apollo Hooks']
+      },
+      {
+        title: 'Typescript and GraphQL',
+        sections: ['graphql-codegen', 'Building queries and mutations']
+      },
+      {
+        title: 'GraphQL Server and Databases',
+        sections: ['Handling pagination', 'Mutation resolvers']
+      },
+      {
+        title: 'Caching and batching',
+        sections: ['Optimized queries', 'Batching with DataLoader']
+      },
+      {
+        title: 'TypeORM and TypeGraphQL',
+        sections: ['Setting up the ORM', 'Writing resolvers']
+      },
+      {
+        title: 'Authentication and Authorization',
+        sections: ['Using JWT', 'Resolver authentication']
+      },
     ]
   },
   {
@@ -37,6 +75,36 @@ const books = [
         photo: 'https://pbs.twimg.com/profile_images/1310853831929090048/TXl02KJZ_200x200.jpg',
         bio: `Sometimes I write, sometimes I don't.`
       },
+    ],
+    chapters: [
+      {
+        title: 'Why Use TypeScript with React?',
+        sections: ['How to Get the Most Out of This Book', 'Why Types and Tests Prevent Errors', 'A Quick Intro to TypeScript']
+      },
+      {
+        title: 'Your First React and TypeScript Application',
+        sections: ['Building Trello with Drag and Drop', 'Creating the Card Component', 'Implementing Drag and Drop', 'State, Hooks, and Events']
+      },
+      {
+        title: 'How to Test React Applications with TypeScript',
+        sections: ['Testing the Goblin Digital Goods Store', 'Setting up TypeScript Tests', 'Rendering Components in Tests', 'Testing Custom React Hooks']
+      },
+      {
+        title: 'Common Patterns',
+        sections: ['Making Music with React', 'Capturing Keystrokes with React', 'Render-props and Higher-order components']
+      },
+      {
+        title: 'Using Next.js with TypeScript',
+        sections: ['Building a Medium-like Blog', 'SSG: Working with Static-site generation', 'SSR: Working with Server-side rendering']
+      },
+      {
+        title: 'Using Redux and TypeScript',
+        sections: ['Build a drawing application', 'Implementing Undo and Redo', 'Redux vs. useReducer']
+      },
+      {
+        title: 'Using GraphQL with React, and TypeScript',
+        sections: ['Complex GraphQL Queries and Types', 'Generate TypeScript Types from GraphQL', 'Build a CLI-based React application']
+      },
     ]
   },
   {
@@ -49,6 +117,76 @@ const books = [
         name: 'Eric Higgins',
         photo: 'https://d8dgeb1f3fxgw.cloudfront.net/static/img/books/security-from-zero/eric-higgins-transparent%201-666-opt.png',
         bio: `After hearing too many war stories from friends in the industry, I've realized that everyone has the same problems when it comes to cybersecurity.\nI've had a successful 20+ year career as a software engineer in Silicon Valley. I worked for Google and led the security team at Optimizely.\nI currently run a consulting firm to help business leaders understand how to start a security program at their company - and how to help it be successful.\nWhen it comes to cybersecurity, everyone makes the same mistakes and everyone does too little, too late. But it doesn't have to be that way.\nIn this book, Security From Zero, we make these decades of practical security knowledge available to everyone.`
+      },
+    ],
+    chapters: [
+      {
+        title: 'What is Security?',
+        sections: ['Information vs. Operational Security']
+      },
+      {
+        title: 'Kickstarting Your Security Program',
+        sections: ['When to Start Thinking About Security', 'Getting Buy-In and Support from Leadership', 'Event Emitters and Streams']
+      },
+      {
+        title: 'The Importance of Security Culture',
+        sections: ['Instilling Healthy Security Culture', 'Practices of Security Culture']
+      },
+      {
+        title: 'Your First Security Hire',
+        sections: ['Your Job Description is Terrible', 'The Skillset You\'re Looking For', 'Setting Them Up For Success']
+      },
+      {
+        title: 'Prioritizing the Work',
+        sections: ['Fibonacci Scale & The Eisenhower Matrix', 'Level of Effort vs. Level of Impact', 'Turning off Easy Mode']
+      },
+      {
+        title: 'Workload Management with Issue tracking',
+        sections: ['Ranking Issues', 'Remove Obstacles']
+      },
+      {
+        title: 'A Data-Driven Security Program',
+        sections: ['Making Data Presentable', 'Terrible Data Examples (and Some Good Ones)', 'Metrics Aren\'t Goals']
+      },
+      {
+        title: 'Leveraging Security Frameworks',
+        sections: ['How A Security Framework Will Help', 'Choosing a Security Framework', 'Establishing a Baseline']
+      },
+      {
+        title: 'Regulation and Compliance',
+        sections: ['Keeping Up With New Rules', 'Business Case for Compliance']
+      },
+      {
+        title: 'Tracking Vulnerabilities',
+        sections: ['CVE: Common Vulnerabilities and Exposures', 'Vulnerabilities Workflow']
+      },
+      {
+        title: 'Planning Your Security Budget',
+        sections: ['Your First Year', 'Example Budgets']
+      },
+      {
+        title: 'Responding to Incidents',
+        sections: ['Goals of Incident Response', 'Conducting Post-Mortems']
+      },
+      {
+        title: 'Threat Modeling',
+        sections: ['Methodologies and Techniques', 'The Worst Case Scenario']
+      },
+      {
+        title: 'Effective Bug Bounty Programs',
+        sections: ['What Similar Companies are Doing', 'The Skillset You\'re Looking For', 'Comparison of Bug Bounty Service Providers']
+      },
+      {
+        title: 'Security Audits	& Penetration Tests',
+        sections: ['When should I get a security review?', 'Finding reputable researchers & consultants']
+      },
+      {
+        title: 'Least Privilege & Access Controls',
+        sections: ['Onboarding & Offboarding', 'Layered Security with MFA']
+      },
+      {
+        title: 'Monitoring & Alerting',
+        sections: ['Smoke Alarms and Monitoring', 'Modern Infrastructure for Monitoring']
       },
     ]
   },
@@ -312,7 +450,7 @@ app.get('/api/books', (req, res) => {
   ));
   const start = (page - 1) * 5;
   return res.json({
-    books: filteredBooks.slice(start, start + 5).map(({authors, ...book}) => book),
+    books: filteredBooks.slice(start, start + 5).map(({authors, chapters, ...book}) => book),
     total: filteredBooks.length
   });
 });
@@ -326,7 +464,8 @@ app.get('/api/tutorials', (req, res) => {
 });
 
 app.get('/api/book', (req, res) => {
-  return res.json(books.find(book => book.slug === req.query.slug));
+  const {chapters, ...book} = books.find(book => book.slug === req.query.slug);
+  return res.json(book);
 });
 
 app.listen('3001');
