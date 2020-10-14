@@ -214,9 +214,13 @@ const books = [
     authors: [
       {
         name: 'Oleksii Trekhleb',
+        photo: 'https://pbs.twimg.com/profile_images/1073099401319669760/2fChlS7s_200x200.jpg',
+        bio: `Software Engineer at @UBER. Author of 80k star javascript-algorithms repository on GitHub.`
       },
       {
         name: 'Sophia Shoemaker',
+        photo: 'https://www.fullstackreact.com/assets/images/authors/sophia-shoemaker.png',
+        bio: `Sophia is a software engineer, writer, and conference speaker. She is the editor of the Fullstack React weekly newsletter`
       },
     ]
   },
