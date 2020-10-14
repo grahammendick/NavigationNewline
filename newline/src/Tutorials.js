@@ -15,7 +15,7 @@ function Tutorials({page}) {
   return (
     <>
       <h1>Our Tutorials</h1>
-      <ul>
+      <ul className="tutorials">
         {tutorials.map(tutorial => (
           <li key={tutorial.title}>
             <h2>{tutorial.title}</h2>

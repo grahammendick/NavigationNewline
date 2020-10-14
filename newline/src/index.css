@@ -35,6 +35,23 @@ ul li {
   vertical-align: top;
   max-width: 252px;
 }
+ul.tutorials li {
+  border: 2px solid rgb(4, 6, 8);
+  border-radius: 5px;
+  padding: 1.5%;
+  width: 33.33333%;
+  margin: 1% 1%;
+  height: 200px;
+  box-sizing: border-box;
+  box-shadow: rgb(203, 240, 255) 8px 8px 0px 0px;
+}
+ul.tutorials li h2 {
+  height: 70%;
+}
+ul.tutorials li div {
+  font-style: normal;
+  font-size: 0.6em;
+}
 ul li div {
   font-style: italic;
   font-size: 0.8em;
@@ -58,10 +75,16 @@ ol li {
   ul li {
     width: 40%;
   }
+  ul.tutorials li {
+    width: 50%;
+  }
 }
 
 @media only screen and (max-width: 600px) {
   ul li {
     width: 90%;
+  }
+  ul.tutorials li {
+    width: 100%;
   }
 }
