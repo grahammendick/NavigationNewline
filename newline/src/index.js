@@ -6,16 +6,19 @@ import './index.css';
 import App from './App';
 import Welcome from './Welcome';
 import Books from './Books';
+import Tutorials from './Tutorials';
 import * as serviceWorker from './serviceWorker';
 
 const stateNavigator = new StateNavigator([
-  {key: 'welcome', route: ''},
+  {key: 'welcome', route: '', trackTypes: false},
   {key: 'books', route: 'our-books+/{page}', defaults: {page: 1}, trackTypes: false},
+  {key: 'tutorials', route: 'our-tutorials', defaults: {page: 1}, trackTypes: false},
 ], new HTML5HistoryManager());
 
-const { welcome, books } = stateNavigator.states;
+const {welcome, books, tutorials} = stateNavigator.states;
 welcome.renderView = () => <Welcome />;
 books.renderView = ({page, title}) => <Books page={page} title={title} />;
+tutorials.renderView = ({page}) => <Tutorials page={page} />;
 
 stateNavigator.start();
 

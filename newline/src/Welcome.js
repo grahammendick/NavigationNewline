@@ -6,8 +6,9 @@ function Welcome() {
     <>
       <h1>Welcome</h1>
       <div>
-        Hello! This is the newline example application built with the Navigation router.
-        Take a look at <NavigationLink stateKey="books">newline's books</NavigationLink>
+        This is the newline example application built with the Navigation router. Take
+        a look at their <NavigationLink stateKey="books">books</NavigationLink> and
+        browse their <NavigationLink stateKey="tutorials">tutorials</NavigationLink>
       </div>
     </>
   )
