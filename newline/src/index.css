@@ -67,9 +67,11 @@ ul.books li img {
   font-size: 4em;
   margin: 0;
   width: 65%;
+  padding-top: 7%;
 }
 .book > img {
   float: right;
+  width: 300px;
 }
 .book > div:first-of-type {
   clear: left;
