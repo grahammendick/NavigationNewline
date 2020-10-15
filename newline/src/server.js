@@ -568,6 +568,40 @@ const books = [
         photo: 'https://www.newline.co/assets/images/authors/ari-lerner.png',
         bio: `Hi, I'm Ari. I'm the author of ng-book and I've been teaching Web Development for a long time. I like to speak at conferences and eat spicy food. I technically got paid while I traveled the country as a professional comedian, but have come to terms with the fact that I am not funny.`
       },
+    ],
+    chapters: [
+      {
+        title: 'Getting Started with Vue',
+        sections: ['Your development environment', 'Create your first Vue.js App', 'Data-driving our views']
+      },
+      {
+        title: 'Single-file Components',
+        sections: ['Build our basic application', 'Breaking into composable components', 'Create a simple global store']
+      },
+      {
+        title: 'Custom Events',
+        sections: ['Managing Event Data', 'The Event Bus', 'Wrangling custom events']
+      },
+      {
+        title: 'Introduction to Vuex',
+        sections: ['Intro to flux', 'Refactoring our note-taking application', 'The Vuex Store']
+      },
+      {
+        title: 'Vuex and Servers',
+        sections: ['Client and Server Interaction', 'The Vuex Store', 'Medium to Large-scale applications']
+      },
+      {
+        title: 'Form Handling',
+        sections: ['Buttons, inputs, and fields', 'Using Validation Libraries', 'Async persistence']
+      },
+      {
+        title: 'Routing',
+        sections: ['Multiple pages', 'Login with authenticated routes', 'Navigation guards']
+      },
+      {
+        title: 'Unit Testing',
+        sections: ['Intro to testing', 'Assertions', 'Real-world app testing']
+      },
     ]
   },
   {
