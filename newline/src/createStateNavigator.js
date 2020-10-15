@@ -3,7 +3,7 @@ import {HTML5HistoryManager, StateNavigator} from 'navigation';
 import Welcome from './Welcome';
 import Books from './Books';
 import Tutorials from './Tutorials';
-import Book from './Book';
+const Book = React.lazy(() => import('./Book'));
 
 function createStateNavigator() {
   const stateNavigator = new StateNavigator([
