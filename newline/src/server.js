@@ -418,6 +418,68 @@ const books = [
         photo: 'https://d8dgeb1f3fxgw.cloudfront.net/static/img/authors/tyler-mcginnis.png',
         bio: `Tyler McGinnis is the creator of React.js Program. He's a Google Developer Expert and he organized React.js Utah and ReactWeek. Sometimes he rambles on JavaScript Air as a co-host and he also helps run React Newsletter and Front End Newsletter.`
       },
+    ],
+    chapters: [
+      {
+        title: 'Writing Your First React App',
+        sections: ['Build a real application', 'Writing our first component', 'Going further']
+      },
+      {
+        title: 'Thinking in React',
+        sections: ['How to architect our applications', 'Data-flow between components', 'Handling component updates']
+      },
+      {
+        title: 'Server Communication',
+        sections: ['Interacting with back-end servers', 'Loading state from our server', 'Handling CRUD from our server']
+      },
+      {
+        title: 'JSX and the Virtual DOM',
+        sections: ['What is the VirtualDOM?', 'Understanding the React model', 'What is JSX?']
+      },
+      {
+        title: 'Advanced Components',
+        sections: ['The React API and You', 'Handling all the props', 'Understanding state and optimizing our components']
+      },
+      {
+        title: 'Forms in React',
+        sections: ['Events, buttons, and more', 'Handling all sorts of inputs', 'Remote and async persistence']
+      },
+      {
+        title: 'Using Webpack with create-react-app',
+        sections: ['Rapid application bootstrapping', 'Hot-reloading and auto-reloaded development experiences', 'Customizing our build']
+      },
+      {
+        title: 'Unit Testing',
+        sections: ['Unit testing with Jest', 'Power-testing with enzyme', 'Mocking async data']
+      },
+      {
+        title: 'Using Redux',
+        sections: ['Intro to the flux design pattern', 'Core redux workflow', 'Hands-on Redux']
+      },
+      {
+        title: 'Intermediate Redux',
+        sections: ['Advanced Redux', 'Adding threading to our app', 'Advanced Reducer Composition']
+      },
+      {
+        title: 'Container and Presentational Components in Redux',
+        sections: ['Presentational and Container components', 'Generating containers with redux', 'Redux Action Creators']
+      },
+      {
+        title: 'Routing',
+        sections: ['React Router v4', 'Multipage applications through react-router', 'Dynamically handling routes', 'Authentication and multi-page applications']
+      },
+      {
+        title: 'Using GraphQL',
+        sections: ['Why GraphQL', 'Complex types', 'Mutations and Subscriptions']
+      },
+      {
+        title: 'Writing a GraphQL Server',
+        sections: ['Building your own GraphQL server', 'Setting up the Database', 'Authentication and authorization']
+      },
+      {
+        title: 'React Native',
+        sections: ['What is React-Native', 'Routing', 'Web vs. Native']
+      },
     ]
   },
   {
