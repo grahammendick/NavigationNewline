@@ -508,6 +508,48 @@ const books = [
         photo: 'https://www.fullstackreact.com/assets/images/authors/sophia-shoemaker.png',
         bio: `Sophia is a software engineer, writer, and conference speaker. She is the editor of the Fullstack React weekly newsletter`
       },
+    ],
+    chapters: [
+      {
+        title: 'Getting Started with React Native',
+        sections: ['Create a Weather App']
+      },
+      {
+        title: 'React Fundamentals',
+        sections: ['Build a Time Tracking App']
+      },
+      {
+        title: 'Core Components, Part 1',
+        sections: ['Build an Instagram Image Feed']
+      },
+      {
+        title: 'Core Components, Part 2',
+        sections: ['Write a Comments Screen']
+      },
+      {
+        title: 'Geolocation, Camera Roll, Statusbar, and more',
+        sections: ['Build a Photo Picker, and more']
+      },
+      {
+        title: 'Keyboard and Transitions',
+        sections: ['Build a Messaging App']
+      },
+      {
+        title: 'Navigation',
+        sections: ['Build a Contact List']
+      },
+      {
+        title: 'Animation & Gestures',
+        sections: ['Build an Animated Slider Puzzle']
+      },
+      {
+        title: 'Native Modules',
+        sections: ['Write iOS and Android Extensions']
+      },
+      {
+        title: 'Deployment',
+        sections: ['Ship your app to the App Store and Play Store']
+      },
     ]
   },
   {
