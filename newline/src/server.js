@@ -700,33 +700,97 @@ const books = [
         photo: 'https://www.fullstackreact.com/assets/images/authors/sophia-shoemaker.png',
         bio: `Sophia is a software engineer, writer, and conference speaker. She is the editor of the Fullstack React weekly newsletter`
       },
-    ]
-  },
-  {
-    slug: 'ng-book',
-    title: 'ng-book',
-    cover: 'https://dzxbosgk90qga.cloudfront.net/fit-in/252x329/n/20191126145408141_ng-book.jpg',
-    description: 'The Complete Book on Angular',
-    authors: [
+    ],
+    chapters: [
       {
-        name: 'Nate Murray',
-        photo: 'https://www.ng-book.com/images/ng2/authors/nate.png',
-        bio: `Nate is a full-stack developer and writes code for everything from deep-learning image recognition to mobile games for cats. Nate formerly worked at IFTTT and his background is in data mining and scaling web services.`
+        title: 'Algorithms and Their Complexities',
       },
       {
-        name: 'Felipe Coury',
-        photo: 'https://www.ng-book.com/images/ng2/authors/felipe.png',
-        bio: `Felipe is the co-founder and CTO of Gistia Labs where he leads an Angular.js and Ruby on Rails culture. He has also worked closely with CTOs on implementing Angular.js strategy for large companies.`
+        title: 'Linked List',
       },
       {
-        name: 'Ari Lerner',
-        photo: 'https://www.ng-book.com/images/ng2/authors/ari.png',
-        bio: `Hi, I'm Ari. I'm the author of ng-book 1 and I've been teaching Angular for a long time. I've been a member of Google's Angular working group and I've spoken at ng-conf, SF Angular, Mountain View AngularJS and more.`
+        title: 'Queue',
       },
       {
-        name: 'Carlos Taborda',
-        photo: 'https://www.ng-book.com/images/ng2/authors/carlos.png',
-        bio: `Carlos is the co-founder and director of Gistia Labs, a team that specializes in full stack engineering projects as well as training established development teams in Angular and Ruby on Rails.`
+        title: 'Stack',
+      },
+      {
+        title: 'Hash Table',
+      },
+      {
+        title: 'Binary Search Tree',
+      },
+      {
+        title: 'Heap',
+      },
+      {
+        title: 'Priority Queue',
+      },
+      {
+        title: 'Graph',
+      },
+      {
+        title: 'Bit Manipulation',
+      },
+      {
+        title: 'Factorial',
+      },
+      {
+        title: 'Fibonacci',
+      },
+      {
+        title: 'Primality Test',
+      },
+      {
+        title: 'Is Power Of Two',
+      },
+      {
+        title: 'Linear Search',
+      },
+      {
+        title: 'Binary Search',
+      },
+      {
+        title: 'Cartesian Product',
+      },
+      {
+        title: 'Power Set',
+      },
+      {
+        title: 'Permutations',
+      },
+      {
+        title: 'Combinations',
+      },
+      {
+        title: 'Quicksort',
+      },
+      {
+        title: 'Tree Depth First Search',
+      },
+      {
+        title: 'Tree Breadth First Search',
+      },
+      {
+        title: 'Graph Depth First Search',
+      },
+      {
+        title: 'Graph Breadth First Search',
+      },
+      {
+        title: 'Dijkstra\'s Graph Algorithm',
+      },
+      {
+        title: 'Appendix: Quiz Answers',
+      },
+      {
+        title: 'Appendix: Big-O Time Comparison',
+      },
+      {
+        title: 'Appendix: Big-O For Data Structures',
+      },
+      {
+        title: 'Appendix: Big-O For Sorting Algorithms',
       },
     ]
   },
