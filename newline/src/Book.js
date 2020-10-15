@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 
-function Book({slug}) {
+function Book({bookResource}) {
   const [book, setBook] = useState(null);
-  useEffect(() => {
-    fetch(`/api/book?slug=${encodeURIComponent(slug)}`)
+  useEffect(() => {    
+    bookResource && bookResource
       .then(res => res.json())
       .then(setBook)
-  }, [slug]);
+  }, [bookResource]);
   return book && (
     <div className="book">
       <h1>{book.title}</h1>

@@ -3,7 +3,7 @@ import {HTML5HistoryManager, StateNavigator} from 'navigation';
 import Welcome from './Welcome';
 import Books from './Books';
 import Tutorials from './Tutorials';
-const Book = React.lazy(() => import('./Book'));
+import BookLoader from './BookLoader';
 
 function createStateNavigator() {
   const stateNavigator = new StateNavigator([
@@ -17,7 +17,7 @@ function createStateNavigator() {
   welcome.renderView = () => <Welcome />;
   books.renderView = ({page, title}) => <Books page={page} title={title} />;
   tutorials.renderView = ({page}) => <Tutorials page={page} />;
-  book.renderView = ({slug}) => <Book slug={slug} />;
+  book.renderView = ({slug}) => <BookLoader slug={slug} />;
   return stateNavigator;  
 }
 
