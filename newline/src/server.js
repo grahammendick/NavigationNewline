@@ -620,6 +620,68 @@ const books = [
         photo: 'https://www.fullstackreact.com/assets/images/authors/nate-murray.png',
         bio: `Nate is a full-stack developer and writes code for everything from deep-learning image recognition to mobile games for cats. Nate formerly worked at IFTTT and his background is in data mining and scaling web services.`
       },
+    ],
+    chapters: [
+      {
+        title: 'What\'s the point of React?',
+      },
+      {
+        title: 'Object Elements',
+      },
+      {
+        title: 'The Element Factory',
+      },
+      {
+        title: 'JSX',
+      },
+      {
+        title: 'Nested Elements',
+      },
+      {
+        title: 'Components',
+      },
+      {
+        title: 'Props',
+      },
+      {
+        title: 'Prop Types',
+      },
+      {
+        title: 'Property Example',
+      },
+      {
+        title: 'Nested Components',
+      },
+      {
+        title: 'Components Classes',
+      },
+      {
+        title: 'Lifecycle Methods',
+      },
+      {
+        title: 'Building an App',
+      },
+      {
+        title: 'More Lifecycle Methods',
+      },
+      {
+        title: 'Refactoring Components',
+      },
+      {
+        title: 'DOM Element Refs',
+      },
+      {
+        title: 'Third-party Library Integration',
+      },
+      {
+        title: 'Advanced Library Integration',
+      },
+      {
+        title: 'Unit Testing',
+      },
+      {
+        title: 'Creating your own Virtual DOM',
+      },
     ]
 },
   {
