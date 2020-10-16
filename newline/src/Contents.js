@@ -4,22 +4,18 @@ import {RefreshLink} from 'navigation-react';
 function Contents({contentsResource, contents}) {
   const [chapters, setChapters] = useState(null);
   useEffect(() => {
-    if (contentsResource) {
-      contentsResource
-        .then(res => res.json())
-        .then(setChapters);
-    } else {
-      setChapters(null);
-    }
+    contentsResource && contentsResource
+      .then(res => res.json())
+      .then(setChapters)
   }, [contentsResource]);
   return (
     <div className="contents">
       <RefreshLink
-        navigationData={{contents: !contents}}
+        navigationData={{contents: true}}
         includeCurrentData={true}>
         <h2>Table of Contents</h2>
       </RefreshLink>
-      {chapters && (
+      {contents && chapters && (
         <ol>
           {chapters.map((chapter, i) => (
             <li key={chapter.title}>
