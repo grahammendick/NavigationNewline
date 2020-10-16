@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {RefreshLink} from 'navigation-react';
 import Contents from './Contents';
 
-function Book({bookResource, slug, contents}) {
+function Book({bookResource, contentsResource, contents}) {
   const [book, setBook] = useState(null);
   useEffect(() => {    
     bookResource && bookResource
@@ -36,7 +36,7 @@ function Book({bookResource, slug, contents}) {
           includeCurrentData={true}>
           <h2>Table of Contents</h2>
         </RefreshLink>
-        {contents && <Contents slug={slug} />}
+        {contents && <Contents contentsResource={contentsResource} />}
       </div>
     </div>
   );
