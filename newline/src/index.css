@@ -144,28 +144,40 @@ ol.pager {
 ol.pager li {
   padding: 0 .5em;
 }
-ol.contents li {
+.contents h2 {
+  font-size: 3em;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  color: #32325d;
+  border-bottom: 9px solid rgba(238, 33, 142, 0.15);
+  display: inline-block;
+  margin: 0px auto;
+  text-underline-position: under;
+  text-shadow: white 2px 2px, white 2px -2px, white -2px 2px, white -2px -2px;  
+}
+.contents ol li {
   margin: 1em .5em;
 }
-ol.contents {
+.contents > ol{
   columns: auto 2;
   margin: 0px;
   font-weight: 300;
 }
-ol.contents li li {
+.contents ol li li {
   border-bottom: 1px dashed rgb(151, 151, 151);  
 }
-ol.contents li > div {
+.contents ol li > div {
   display: flex;
   justify-content: space-between;
   font-weight: 300;
 }
-ol.contents li li div {
+.contents ol li li div {
   margin-bottom: -5px;
   font-style: italic;
   color: rgb(128, 128, 128);
 }
-ol.contents li li span {
+.contents ol li li span {
   background: #fff;
 }
 

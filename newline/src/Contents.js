@@ -8,7 +8,7 @@ function Contents({slug}) {
       .then(setChapters)
   }, [slug]);
   return chapters && (
-    <ol className="contents">
+    <ol>
       {chapters.map((chapter, i) => (
         <li key={chapter.title}>
           <div><span>{chapter.title}</span><span>{i+1}</span></div>

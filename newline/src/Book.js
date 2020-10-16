@@ -30,12 +30,14 @@ function Book({bookResource, slug, contents}) {
           ))}
         </ul>
       </div>
-      <RefreshLink
-        navigationData={{contents: !contents}}
-        includeCurrentData={true}>
-        Table of Contents
-      </RefreshLink>
-      {contents && <Contents slug={slug} />}
+      <div className="contents">
+        <RefreshLink
+          navigationData={{contents: !contents}}
+          includeCurrentData={true}>
+          <h2>Table of Contents</h2>
+        </RefreshLink>
+        {contents && <Contents slug={slug} />}
+      </div>
     </div>
   );
 }
