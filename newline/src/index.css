@@ -156,7 +156,7 @@ ol.pager li {
   text-underline-position: under;
   text-shadow: white 2px 2px, white 2px -2px, white -2px 2px, white -2px -2px;  
 }
-.contents ol li {
+.contents ol li li {
   margin: 1em .5em;
 }
 .contents > ol{
