@@ -872,4 +872,9 @@ app.get('/api/book', (req, res) => {
   return res.json(book);
 });
 
+app.get('/api/contents', (req, res) => {
+  const {chapters, ...book} = books.find(book => book.slug === req.query.slug);
+  return res.json(chapters);
+});
+
 app.listen('3001');

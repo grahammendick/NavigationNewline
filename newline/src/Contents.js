@@ -1,17 +1,17 @@
 import React, {useState, useEffect} from 'react';
 
 function Contents({slug}) {
-  const [contents, setContents] = useState(null);
+  const [chapters, setChapters] = useState(null);
   useEffect(() => {
     fetch(`/api/contents?slug=${encodeURIComponent(slug)}`)
       .then(res => res.json())
-      .then(setContents)
+      .then(setChapters)
   }, [slug]);
-  return contents && (
+  return chapters && (
     <ol className="contents">
-      {contents.map(chapter => (
-        <li key={chapter.name}>
-          {chapter.name}
+      {chapters.map(chapter => (
+        <li key={chapter.title}>
+          {chapter.title}
         </li>
       ))}
     </ol>
