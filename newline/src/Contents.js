@@ -12,6 +12,13 @@ function Contents({slug}) {
       {chapters.map(chapter => (
         <li key={chapter.title}>
           {chapter.title}
+          {chapter.sections && <ol>
+            {chapter.sections.map(section => (
+              <li key={section}>
+                {section}
+              </li>
+            ))}
+          </ol>}
         </li>
       ))}
     </ol>
