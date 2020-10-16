@@ -155,6 +155,10 @@ ol.contents {
 ol.contents li li {
   border-bottom: 1px dashed rgb(151, 151, 151);  
 }
+ol.contents li > div {
+  display: flex;
+  justify-content: space-between;
+}
 ol.contents li li div {
   margin-bottom: -5px;
 }

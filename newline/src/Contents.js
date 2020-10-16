@@ -9,9 +9,9 @@ function Contents({slug}) {
   }, [slug]);
   return chapters && (
     <ol className="contents">
-      {chapters.map(chapter => (
+      {chapters.map((chapter, i) => (
         <li key={chapter.title}>
-          {chapter.title}
+          <div><span>{chapter.title}</span><span>{i+1}</span></div>
           {chapter.sections && <ol>
             {chapter.sections.map(section => (
               <li key={section}>
