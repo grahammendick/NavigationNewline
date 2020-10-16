@@ -152,7 +152,7 @@ ol.pager li {
   color: #32325d;
   border-bottom: 9px solid rgba(238, 33, 142, 0.15);
   display: inline-block;
-  margin: 0px auto;
+  margin: 0 0 5% 0;
   text-underline-position: under;
   text-shadow: white 2px 2px, white 2px -2px, white -2px 2px, white -2px -2px;  
 }
