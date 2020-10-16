@@ -15,7 +15,7 @@ function Contents({slug}) {
           {chapter.sections && <ol>
             {chapter.sections.map(section => (
               <li key={section}>
-                {section}
+                <div><span>{section}</span></div>
               </li>
             ))}
           </ol>}

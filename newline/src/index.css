@@ -141,13 +141,25 @@ ol.pager {
   justify-content: center;
 
 }
-ol li {
+ol.pager li {
   padding: 0 .5em;
+}
+ol.contents li {
+  margin: 1em .5em;
 }
 ol.contents {
   columns: auto 2;
   margin: 0px;
   font-weight: 300;
+}
+ol.contents li li {
+  border-bottom: 1px dashed rgb(151, 151, 151);  
+}
+ol.contents li li div {
+  margin-bottom: -5px;
+}
+ol.contents li li span {
+  background: #fff;
 }
 
 @media only screen and (max-width: 900px) {
