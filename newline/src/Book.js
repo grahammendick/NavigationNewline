@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
+import {RefreshLink} from 'navigation-react';
+import Contents from './Contents';
 
-function Book({bookResource}) {
+function Book({bookResource, slug, contents}) {
   const [book, setBook] = useState(null);
   useEffect(() => {    
     bookResource && bookResource
@@ -28,6 +30,12 @@ function Book({bookResource}) {
           ))}
         </ul>
       </div>
+      <RefreshLink
+        navigationData={{contents: !contents}}
+        includeCurrentData={true}>
+        Table of Contents
+      </RefreshLink>
+      {contents && <Contents slug={slug} />}
     </div>
   );
 }
