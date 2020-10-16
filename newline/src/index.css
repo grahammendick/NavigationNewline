@@ -158,9 +158,12 @@ ol.contents li li {
 ol.contents li > div {
   display: flex;
   justify-content: space-between;
+  font-weight: 300;
 }
 ol.contents li li div {
   margin-bottom: -5px;
+  font-style: italic;
+  color: rgb(128, 128, 128);
 }
 ol.contents li li span {
   background: #fff;
