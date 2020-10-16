@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import {RefreshLink} from 'navigation-react';
 import Contents from './Contents';
 
 function Book({bookResource, contentsResource, contents}) {
@@ -30,14 +29,7 @@ function Book({bookResource, contentsResource, contents}) {
           ))}
         </ul>
       </div>
-      <div className="contents">
-        <RefreshLink
-          navigationData={{contents: !contents}}
-          includeCurrentData={true}>
-          <h2>Table of Contents</h2>
-        </RefreshLink>
-        {contents && <Contents contentsResource={contentsResource} />}
-      </div>
+      <Contents contentsResource={contentsResource} contents={contents} />
     </div>
   );
 }
