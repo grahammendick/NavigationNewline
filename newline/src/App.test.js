@@ -87,7 +87,38 @@ test('books renders book links', () => {
   stateNavigator.navigate('books')
   const fetch = mockFetch({
     '/api/books?page=1&title=' : {
-      books: [],
+      books: [
+        {
+          slug: 'fullstack-graphql',
+          title: 'Fullstack GraphQL',
+          cover: 'https://fullstack-graphql-cover.jpg',
+          description: 'The Complete Guide to Writing GraphQL Servers and Clients with TypeScript',
+        },
+        {
+          slug: 'fullstack-react-with-typeScript',
+          title: 'Fullstack React with TypeScript',
+          cover: 'https://fullstack-react-with-typeScript-cover.png',
+          description: 'Learn Pro Patterns for Hooks, Testing, Redux, SSR, and GraphQL',
+        },
+        {
+          slug: 'security-from-zero',
+          title: 'Security from Zero',
+          cover: 'https://security-from-zero-cover.png',
+          description: 'Practical Security for Busy People',
+        },
+        {
+          slug: 'fullstack-rust',
+          title: 'Fullstack Rust',
+          cover: 'https://fullstack-rust-cover.jpg',
+          description: 'The Complete Guide to Building Apps with Rust',
+        },
+        {
+          slug: 'fullstack-nodejs',
+          title: 'Fullstack Node.js',
+          cover: 'https://fullstack-nodejs-cover.png',
+          description: 'The Complete Guide to Building Production Apps with Node.js',      
+        }                
+      ],
       total: 12,
     }
   });
@@ -102,6 +133,11 @@ test('books renders book links', () => {
       container
     );
   });
-  console.log(container.querySelector("ol").innerHTML)
-  console.log('a');
+  const bookLinks = container.querySelectorAll("ul li a");
+  assert.strictEqual(bookLinks.length, 5);
+  assert.strictEqual(bookLinks[0].getAttribute('href'), '/fullstack-graphql');
+  assert.strictEqual(bookLinks[1].getAttribute('href'), '/fullstack-react-with-typeScript');
+  assert.strictEqual(bookLinks[2].getAttribute('href'), '/security-from-zero');
+  assert.strictEqual(bookLinks[3].getAttribute('href'), '/fullstack-rust');
+  assert.strictEqual(bookLinks[4].getAttribute('href'), '/fullstack-nodejs');
 });
