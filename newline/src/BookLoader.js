@@ -8,8 +8,9 @@ function BookLoader({slug, contents}) {
     setBookResource(fetch(`/api/book?slug=${encodeURIComponent(slug)}`));
   }, [slug]);
   useEffect(() => {
-    setContentsResource(contents ?
-      fetch(`/api/contents?slug=${encodeURIComponent(slug)}`) : null);
+    contents && setContentsResource(
+      fetch(`/api/contents?slug=${encodeURIComponent(slug)}`)
+    );
   }, [contents, slug]);
   return <Book
     bookResource={bookResource}
