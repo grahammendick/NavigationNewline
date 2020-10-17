@@ -7,7 +7,7 @@ import FetchContext from './FetchContext';
 import assert from 'assert';
 import {act} from 'react-dom/test-utils';
 
-const getMockFetch = data => (
+const mockFetch = data => (
   () => ({
     then: () => ({
       then : fn => act(() => fn(data))
@@ -33,7 +33,7 @@ test('welcome renders books and tutorials links', () => {
 test('welcome books link navigates to books', () => {
   const stateNavigator = createStateNavigator();
   stateNavigator.navigate('welcome')
-  const fetch = getMockFetch({
+  const fetch = mockFetch({
     books: [],
     total: 0,
   });
@@ -51,7 +51,7 @@ test('welcome books link navigates to books', () => {
 test('welcome tutorials link navigates to tutorials', () => {
   const stateNavigator = createStateNavigator();
   stateNavigator.navigate('welcome')
-  const fetch = getMockFetch({
+  const fetch = mockFetch({
     tutorials: [],
     total: 0,
   });
@@ -69,7 +69,7 @@ test('welcome tutorials link navigates to tutorials', () => {
 test('books renders book links', () => {
   const stateNavigator = createStateNavigator();
   stateNavigator.navigate('books')
-  const fetch = getMockFetch({
+  const fetch = mockFetch({
     books: [],
     total: 12,
   });
