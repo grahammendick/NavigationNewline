@@ -19,12 +19,8 @@ function createStateNavigator() {
   tutorials.renderView = ({page}) => <Tutorials page={page} />;
   book.renderView = ({slug, contents}) => <BookLoader slug={slug} contents={contents} />;
 
-  book.urlEncode = (_, key, val) => (
-    (key === 'contents' && val === 'true') ? 'contents' : val
-  );
-  book.urlDecode = (_, key, val) => (
-    (key === 'contents' && val === 'contents') ? 'true' : val
-  );
+  book.urlEncode = (_, key, val) => (key === 'contents' && val === 'true') ? 'contents' : val;
+  book.urlDecode = (_, key, val) => (key === 'contents' && val === 'contents') ? 'true' : val;
   return stateNavigator;  
 }
 
