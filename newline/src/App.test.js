@@ -28,9 +28,7 @@ test('welcome renders books and tutorials links', () => {
     );
   });
   const links = container.querySelectorAll('a');
-  assert.strictEqual(links[0].innerHTML, 'books');
   assert.strictEqual(links[0].getAttribute('href'), '/our-books');
-  assert.strictEqual(links[1].innerHTML, 'tutorials');
   assert.strictEqual(links[1].getAttribute('href'), '/our-tutorials');
 });
 
