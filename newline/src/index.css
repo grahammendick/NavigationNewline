@@ -207,4 +207,7 @@ ol.pager li {
     clear: both;
     float: none;
   }
+  .contents > ol{
+    columns: auto 1;
+  }
 }
