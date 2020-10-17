@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {NavigationHandler} from 'navigation-react';
+import assert from 'assert';
+import {act, Simulate} from 'react-dom/test-utils';
 import App from './App';
 import createStateNavigator from './createStateNavigator';
 import FetchContext from './FetchContext';
-import assert from 'assert';
-import {act, Simulate} from 'react-dom/test-utils';
 
 const mockFetch = data => (
   url => ({
