@@ -3,7 +3,26 @@ import {render} from '@testing-library/react';
 import {NavigationHandler} from 'navigation-react';
 import App from './App';
 import createStateNavigator from './createStateNavigator';
+import FetchContext from './FetchContext';
 import assert from 'assert';
+import {act} from 'react-dom/test-utils';
+
+function getMockFetch(data) {
+  return () => {
+    return {
+      then: fn => {
+        fn({
+          json: () => {}
+        });
+        return {
+          then : fn => {
+            act(() => fn(data))
+          }
+        };
+      }
+    }
+  };
+}
 
 test('welcome renders books and tutorials links', () => {
   const stateNavigator = createStateNavigator();
@@ -23,10 +42,16 @@ test('welcome renders books and tutorials links', () => {
 test('welcome books link navigates to books', () => {
   const stateNavigator = createStateNavigator();
   stateNavigator.navigate('welcome')
+  const fetch = getMockFetch({
+    books: [],
+    total: 0,
+  });
   const {container} = render(
-    <NavigationHandler stateNavigator={stateNavigator}>
-      <App />
-    </NavigationHandler>
+    <FetchContext.Provider value={fetch}>
+      <NavigationHandler stateNavigator={stateNavigator}>
+        <App />
+      </NavigationHandler>
+    </FetchContext.Provider>
   );
   container.querySelectorAll('a')[0].click();
   assert.strictEqual(stateNavigator.stateContext.state.key, 'books');
@@ -35,11 +60,35 @@ test('welcome books link navigates to books', () => {
 test('welcome tutorials link navigates to tutorials', () => {
   const stateNavigator = createStateNavigator();
   stateNavigator.navigate('welcome')
+  const fetch = getMockFetch({
+    tutorials: [],
+    total: 0,
+  });
   const {container} = render(
-    <NavigationHandler stateNavigator={stateNavigator}>
-      <App />
-    </NavigationHandler>
+    <FetchContext.Provider value={fetch}>
+      <NavigationHandler stateNavigator={stateNavigator}>
+        <App />
+      </NavigationHandler>
+    </FetchContext.Provider>
   );
   container.querySelectorAll('a')[1].click();
   assert.strictEqual(stateNavigator.stateContext.state.key, 'tutorials');
+});
+
+test('books renders book links', () => {
+  const stateNavigator = createStateNavigator();
+  stateNavigator.navigate('books')
+  const fetch = getMockFetch({
+    books: [],
+    total: 12,
+  });
+  const {container} = render(
+    <FetchContext.Provider value={fetch}>
+      <NavigationHandler stateNavigator={stateNavigator}>
+        <App />
+      </NavigationHandler>
+    </FetchContext.Provider>
+  );
+  console.log(container.querySelector("ol").innerHTML)
+  console.log('a');
 });

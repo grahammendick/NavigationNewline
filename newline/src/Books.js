@@ -1,11 +1,13 @@
 import React, {useEffect, useState, useContext} from 'react';
 import {NavigationContext, NavigationLink} from 'navigation-react';
+import FetchContext from './FetchContext';
 import Pager from './Pager';
 
 function Books({page, title = ''}) {
   const [books, setBooks] = useState([]);
   const [total, setTotal] = useState(0);
   const [filter, setFilter] = useState(title);
+  const fetch = useContext(FetchContext);
   const {stateNavigator} = useContext(NavigationContext);
   useEffect(() => {
     fetch(`/api/books?page=${encodeURIComponent(page)}`
