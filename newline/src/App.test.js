@@ -1,11 +1,11 @@
 import React from 'react';
-import {render} from '@testing-library/react';
+import ReactDOM from 'react-dom';
 import {NavigationHandler} from 'navigation-react';
 import App from './App';
 import createStateNavigator from './createStateNavigator';
 import FetchContext from './FetchContext';
 import assert from 'assert';
-import {act} from 'react-dom/test-utils';
+import {act, Simulate} from 'react-dom/test-utils';
 
 const mockFetch = data => (
   url => ({
@@ -17,12 +17,16 @@ const mockFetch = data => (
 
 test('welcome renders books and tutorials links', () => {
   const stateNavigator = createStateNavigator();
-  stateNavigator.navigate('welcome')
-  const {container} = render(
-    <NavigationHandler stateNavigator={stateNavigator}>
-      <App />
-    </NavigationHandler>
-  );
+  stateNavigator.navigate('welcome');
+  const container = document.createElement('div');
+  act(() => {
+    ReactDOM.render(
+      <NavigationHandler stateNavigator={stateNavigator}>
+        <App />
+      </NavigationHandler>,
+      container
+    );
+  });
   const links = container.querySelectorAll('a');
   assert.strictEqual(links[0].innerHTML, 'books');
   assert.strictEqual(links[0].getAttribute('href'), '/our-books');
@@ -39,14 +43,18 @@ test('welcome books link navigates to books', () => {
       total: 0,
     }
   });
-  const {container} = render(
-    <FetchContext.Provider value={fetch}>
-      <NavigationHandler stateNavigator={stateNavigator}>
-        <App />
-      </NavigationHandler>
-    </FetchContext.Provider>
-  );
-  container.querySelectorAll('a')[0].click();
+  const container = document.createElement('div');
+  act(() => {
+    ReactDOM.render(
+      <FetchContext.Provider value={fetch}>
+        <NavigationHandler stateNavigator={stateNavigator}>
+          <App />
+        </NavigationHandler>
+      </FetchContext.Provider>,
+      container
+    );
+  });
+  Simulate.click(container.querySelectorAll('a')[0]);
   assert.strictEqual(stateNavigator.stateContext.state.key, 'books');
 });
 
@@ -59,14 +67,18 @@ test('welcome tutorials link navigates to tutorials', () => {
       total: 0,
     }
   });
-  const {container} = render(
-    <FetchContext.Provider value={fetch}>
-      <NavigationHandler stateNavigator={stateNavigator}>
-        <App />
-      </NavigationHandler>
-    </FetchContext.Provider>
-  );
-  container.querySelectorAll('a')[1].click();
+  const container = document.createElement('div');
+  act(() => {
+    ReactDOM.render(
+      <FetchContext.Provider value={fetch}>
+        <NavigationHandler stateNavigator={stateNavigator}>
+          <App />
+        </NavigationHandler>
+      </FetchContext.Provider>,
+      container
+    );
+  })
+  Simulate.click(container.querySelectorAll('a')[1]);
   assert.strictEqual(stateNavigator.stateContext.state.key, 'tutorials');
 });
 
@@ -79,13 +91,17 @@ test('books renders book links', () => {
       total: 12,
     }
   });
-  const {container} = render(
-    <FetchContext.Provider value={fetch}>
-      <NavigationHandler stateNavigator={stateNavigator}>
-        <App />
-      </NavigationHandler>
-    </FetchContext.Provider>
-  );
+  const container = document.createElement('div');
+  act(() => {
+    ReactDOM.render(
+      <FetchContext.Provider value={fetch}>
+        <NavigationHandler stateNavigator={stateNavigator}>
+          <App />
+        </NavigationHandler>
+      </FetchContext.Provider>,
+      container
+    );
+  });
   console.log(container.querySelector("ol").innerHTML)
   console.log('a');
 });
