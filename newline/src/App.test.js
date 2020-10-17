@@ -179,11 +179,11 @@ test('books renders paging links', () => {
       container
     );
   });
-  const bookLinks = container.querySelectorAll("ol li a");
-  assert.strictEqual(bookLinks.length, 3);
-  assert.strictEqual(bookLinks[0].getAttribute('href'), null);
-  assert.strictEqual(bookLinks[1].getAttribute('href'), '/our-books/2');
-  assert.strictEqual(bookLinks[2].getAttribute('href'), '/our-books/3');
+  const pagingLinks = container.querySelectorAll("ol li a");
+  assert.strictEqual(pagingLinks.length, 3);
+  assert.strictEqual(pagingLinks[0].getAttribute('href'), null);
+  assert.strictEqual(pagingLinks[1].getAttribute('href'), '/our-books/2');
+  assert.strictEqual(pagingLinks[2].getAttribute('href'), '/our-books/3');
 });
 
 test('books renders paging links for page 2', () => {
@@ -237,11 +237,68 @@ test('books renders paging links for page 2', () => {
       container
     );
   });
-  const bookLinks = container.querySelectorAll("ol li a");
-  assert.strictEqual(bookLinks.length, 3);
-  assert.strictEqual(bookLinks[0].getAttribute('href'), '/our-books');
-  assert.strictEqual(bookLinks[1].getAttribute('href'), null);
-  assert.strictEqual(bookLinks[2].getAttribute('href'), '/our-books/3');
+  const pagingLinks = container.querySelectorAll("ol li a");
+  assert.strictEqual(pagingLinks.length, 3);
+  assert.strictEqual(pagingLinks[0].getAttribute('href'), '/our-books');
+  assert.strictEqual(pagingLinks[1].getAttribute('href'), null);
+  assert.strictEqual(pagingLinks[2].getAttribute('href'), '/our-books/3');
+});
+
+test('books link navigates to book details', () => {
+  const stateNavigator = createStateNavigator();
+  stateNavigator.navigate('books')
+  const fetch = mockFetch({
+    '/api/books?page=1&title=' : {
+      books: [
+        {
+          slug: 'fullstack-graphql',
+          title: 'Fullstack GraphQL',
+          cover: 'https://fullstack-graphql-cover.jpg',
+          description: 'The Complete Guide to Writing GraphQL Servers and Clients with TypeScript',
+        },
+        {
+          slug: 'fullstack-react-with-typeScript',
+          title: 'Fullstack React with TypeScript',
+          cover: 'https://fullstack-react-with-typeScript-cover.png',
+          description: 'Learn Pro Patterns for Hooks, Testing, Redux, SSR, and GraphQL',
+        },
+        {
+          slug: 'security-from-zero',
+          title: 'Security from Zero',
+          cover: 'https://security-from-zero-cover.png',
+          description: 'Practical Security for Busy People',
+        },
+        {
+          slug: 'fullstack-rust',
+          title: 'Fullstack Rust',
+          cover: 'https://fullstack-rust-cover.jpg',
+          description: 'The Complete Guide to Building Apps with Rust',
+        },
+        {
+          slug: 'fullstack-nodejs',
+          title: 'Fullstack Node.js',
+          cover: 'https://fullstack-nodejs-cover.png',
+          description: 'The Complete Guide to Building Production Apps with Node.js',      
+        }                
+      ],
+      total: 12,
+    }
+  });
+  const container = document.createElement('div');
+  act(() => {
+    ReactDOM.render(
+      <FetchContext.Provider value={fetch}>
+        <NavigationHandler stateNavigator={stateNavigator}>
+          <App />
+        </NavigationHandler>
+      </FetchContext.Provider>,
+      container
+    );
+  });
+  const bookLinks = container.querySelectorAll("ul li a");
+  Simulate.click(bookLinks[1]);
+  assert.strictEqual(stateNavigator.stateContext.state.key, 'book');
+  assert.strictEqual(stateNavigator.stateContext.data.slug, 'fullstack-react-with-typeScript');
 });
 
 test('books paging link navigates to page of books', () => {
@@ -295,8 +352,8 @@ test('books paging link navigates to page of books', () => {
       container
     );
   });
-  const bookLinks = container.querySelectorAll("ol li a");
-  Simulate.click(bookLinks[1]);
+  const pagingLinks = container.querySelectorAll("ol li a");
+  Simulate.click(pagingLinks[1]);
   assert.strictEqual(stateNavigator.stateContext.state.key, 'books');
   assert.strictEqual(stateNavigator.stateContext.data.page, 2);
 });
