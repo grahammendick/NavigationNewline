@@ -8,20 +8,14 @@ import assert from 'assert';
 import {act} from 'react-dom/test-utils';
 
 function getMockFetch(data) {
-  return () => {
-    return {
-      then: fn => {
-        fn({
-          json: () => {}
-        });
-        return {
-          then : fn => {
-            act(() => fn(data))
-          }
-        };
-      }
+  return () => ({
+    then: fn => {
+      fn({json: () => {}});
+      return {
+        then : fn => act(() => fn(data))
+      };
     }
-  };
+  });
 }
 
 test('welcome renders books and tutorials links', () => {
