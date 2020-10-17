@@ -1,9 +1,21 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import {render} from '@testing-library/react';
+import {NavigationHandler} from 'navigation-react';
 import App from './App';
+import createStateNavigator from './createStateNavigator';
+import assert from 'assert';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('welcome renders books and tutorials links', () => {
+  const stateNavigator = createStateNavigator();
+  stateNavigator.navigate('welcome')
+  const {container} = render(
+    <NavigationHandler stateNavigator={stateNavigator}>
+      <App />
+    </NavigationHandler>
+  );
+  const links = container.querySelectorAll('a');
+  assert.strictEqual(links[0].innerHTML, 'books');
+  assert.strictEqual(links[0].getAttribute('href'), '/our-books');
+  assert.strictEqual(links[1].innerHTML, 'tutorials');
+  assert.strictEqual(links[1].getAttribute('href'), '/our-tutorials');
 });
