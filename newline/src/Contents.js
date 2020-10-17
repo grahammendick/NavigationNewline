@@ -12,7 +12,8 @@ function Contents({contentsResource, contents}) {
     <div className="contents">
       <RefreshLink
         navigationData={{contents: true}}
-        includeCurrentData={true}>
+        includeCurrentData={true}
+        disableActive={true}>
         <h2>Table of Contents</h2>
       </RefreshLink>
       {contents && chapters && (
