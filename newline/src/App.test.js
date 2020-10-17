@@ -10,7 +10,9 @@ import FetchContext from './FetchContext';
 const mockFetch = data => (
   url => ({
     then: () => ({
-      then : fn => act(() => data[url] && fn(data[url]))
+      then : fn => act(() => {
+        data[url] && fn(data[url])
+      })
     })
   })
 );
@@ -357,3 +359,5 @@ test('books paging link navigates to page of books', () => {
   assert.strictEqual(stateNavigator.stateContext.state.key, 'books');
   assert.strictEqual(stateNavigator.stateContext.data.page, 2);
 });
+
+// test book state!!
