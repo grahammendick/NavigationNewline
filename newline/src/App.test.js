@@ -10,9 +10,8 @@ import {act} from 'react-dom/test-utils';
 const getMockFetch = data => (
   () => ({
     then: () => ({
-        then : fn => act(() => fn(data))
-      }
-    )
+      then : fn => act(() => fn(data))
+    })
   })
 );
 
