@@ -139,3 +139,61 @@ test('books renders book links', () => {
   assert.strictEqual(bookLinks[3].getAttribute('href'), '/fullstack-rust');
   assert.strictEqual(bookLinks[4].getAttribute('href'), '/fullstack-nodejs');
 });
+
+test('books renders paging links', () => {
+  const stateNavigator = createStateNavigator();
+  stateNavigator.navigate('books')
+  const fetch = mockFetch({
+    '/api/books?page=1&title=' : {
+      books: [
+        {
+          slug: 'fullstack-graphql',
+          title: 'Fullstack GraphQL',
+          cover: 'https://fullstack-graphql-cover.jpg',
+          description: 'The Complete Guide to Writing GraphQL Servers and Clients with TypeScript',
+        },
+        {
+          slug: 'fullstack-react-with-typeScript',
+          title: 'Fullstack React with TypeScript',
+          cover: 'https://fullstack-react-with-typeScript-cover.png',
+          description: 'Learn Pro Patterns for Hooks, Testing, Redux, SSR, and GraphQL',
+        },
+        {
+          slug: 'security-from-zero',
+          title: 'Security from Zero',
+          cover: 'https://security-from-zero-cover.png',
+          description: 'Practical Security for Busy People',
+        },
+        {
+          slug: 'fullstack-rust',
+          title: 'Fullstack Rust',
+          cover: 'https://fullstack-rust-cover.jpg',
+          description: 'The Complete Guide to Building Apps with Rust',
+        },
+        {
+          slug: 'fullstack-nodejs',
+          title: 'Fullstack Node.js',
+          cover: 'https://fullstack-nodejs-cover.png',
+          description: 'The Complete Guide to Building Production Apps with Node.js',      
+        }                
+      ],
+      total: 12,
+    }
+  });
+  const container = document.createElement('div');
+  act(() => {
+    ReactDOM.render(
+      <FetchContext.Provider value={fetch}>
+        <NavigationHandler stateNavigator={stateNavigator}>
+          <App />
+        </NavigationHandler>
+      </FetchContext.Provider>,
+      container
+    );
+  });
+  const bookLinks = container.querySelectorAll("ol li a");
+  assert.strictEqual(bookLinks.length, 3);
+  assert.strictEqual(bookLinks[0].getAttribute('href'), null);
+  assert.strictEqual(bookLinks[1].getAttribute('href'), '/our-books/2');
+  assert.strictEqual(bookLinks[2].getAttribute('href'), '/our-books/3');
+});
