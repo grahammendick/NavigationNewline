@@ -1,9 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
+import FetchContext from './FetchContext';
 import Pager from './Pager';
 
 function Tutorials({page}) {
   const [tutorials, setTutorials] = useState([]);
   const [total, setTotal] = useState(0);
+  const fetch = useContext(FetchContext);
   useEffect(() => {
     fetch(`/api/tutorials?page=${encodeURIComponent(page)}`)
       .then(res => res.json())
@@ -11,7 +13,7 @@ function Tutorials({page}) {
         setTutorials(tutorials);
         setTotal(total);
       })
-  }, [page]);
+  }, [page, fetch]);
   return (
     <>
       <h1>Our Tutorials</h1>

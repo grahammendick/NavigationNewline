@@ -17,7 +17,7 @@ function Books({page, title = ''}) {
         setBooks(books);
         setTotal(total);
       })
-  }, [page, title]);
+  }, [page, title, fetch]);
   return (
     <>
       <h1>Our Books</h1>
