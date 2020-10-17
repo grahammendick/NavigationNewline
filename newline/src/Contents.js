@@ -27,7 +27,9 @@ function Contents({contentsResource, contents}) {
               {chapter.sections && <ol>
                 {chapter.sections.map(section => (
                   <li key={section}>
-                    <div><span>{section}</span></div>
+                    <div>
+                      <span>{section}</span>
+                    </div>
                   </li>
                 ))}
               </ol>}
