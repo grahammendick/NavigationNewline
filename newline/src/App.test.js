@@ -8,9 +8,9 @@ import assert from 'assert';
 import {act} from 'react-dom/test-utils';
 
 const mockFetch = data => (
-  () => ({
+  url => ({
     then: () => ({
-      then : fn => act(() => fn(data))
+      then : fn => act(() => fn(data[url]))
     })
   })
 );
@@ -34,8 +34,10 @@ test('welcome books link navigates to books', () => {
   const stateNavigator = createStateNavigator();
   stateNavigator.navigate('welcome')
   const fetch = mockFetch({
-    books: [],
-    total: 0,
+    '/api/books?page=1&title=' : {
+      books: [],
+      total: 0,
+    }
   });
   const {container} = render(
     <FetchContext.Provider value={fetch}>
@@ -52,8 +54,10 @@ test('welcome tutorials link navigates to tutorials', () => {
   const stateNavigator = createStateNavigator();
   stateNavigator.navigate('welcome')
   const fetch = mockFetch({
-    tutorials: [],
-    total: 0,
+    '/api/tutorials?page=1' : {
+      tutorials: [],
+      total: 0,
+    }
   });
   const {container} = render(
     <FetchContext.Provider value={fetch}>
@@ -70,8 +74,10 @@ test('books renders book links', () => {
   const stateNavigator = createStateNavigator();
   stateNavigator.navigate('books')
   const fetch = mockFetch({
-    books: [],
-    total: 12,
+    '/api/books?page=1&title=' : {
+      books: [],
+      total: 12,
+    }
   });
   const {container} = render(
     <FetchContext.Provider value={fetch}>
