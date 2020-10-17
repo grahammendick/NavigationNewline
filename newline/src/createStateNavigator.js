@@ -10,7 +10,7 @@ function createStateNavigator() {
     {key: 'welcome', route: '', trackTypes: false},
     {key: 'books', route: 'our-books+/{page}', defaults: {page: 1}, trackTypes: false},
     {key: 'tutorials', route: 'our-tutorials', defaults: {page: 1}, trackTypes: false},
-    {key: 'book'},
+    {key: 'book', defaults: {contents: false}},
   ], new HTML5HistoryManager());
   
   const {welcome, books, tutorials, book} = stateNavigator.states;
