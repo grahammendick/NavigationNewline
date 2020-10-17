@@ -10,7 +10,7 @@ import FetchContext from './FetchContext';
 const mockFetch = data => (
   url => ({
     then: () => ({
-      then : fn => act(() => fn(data[url]))
+      then : fn => act(() => data[url] && fn(data[url]))
     })
   })
 );
@@ -35,12 +35,6 @@ test('welcome renders books and tutorials links', () => {
 test('welcome books link navigates to books', () => {
   const stateNavigator = createStateNavigator();
   stateNavigator.navigate('welcome')
-  const fetch = mockFetch({
-    '/api/books?page=1&title=' : {
-      books: [],
-      total: 0,
-    }
-  });
   const container = document.createElement('div');
   act(() => {
     ReactDOM.render(
@@ -59,12 +53,6 @@ test('welcome books link navigates to books', () => {
 test('welcome tutorials link navigates to tutorials', () => {
   const stateNavigator = createStateNavigator();
   stateNavigator.navigate('welcome')
-  const fetch = mockFetch({
-    '/api/tutorials?page=1' : {
-      tutorials: [],
-      total: 0,
-    }
-  });
   const container = document.createElement('div');
   act(() => {
     ReactDOM.render(
