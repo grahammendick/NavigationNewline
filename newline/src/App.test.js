@@ -309,5 +309,6 @@ test('books paging link navigates to page of books', () => {
   });
   const bookLinks = container.querySelectorAll("ol li a");
   Simulate.click(bookLinks[1]);
+  assert.strictEqual(stateNavigator.stateContext.state.key, 'books');
   assert.strictEqual(stateNavigator.stateContext.data.page, 2);
 });
