@@ -10,9 +10,7 @@ import FetchContext from './FetchContext';
 const mockFetch = data => (
   url => ({
     then: () => ({
-      then : fn => act(() => {
-        data[url] && fn(data[url])
-      })
+      then : fn => data[url] && act(() => fn(data[url]))
     })
   })
 );
