@@ -119,7 +119,7 @@ test('books renders book links', () => {
       container
     );
   });
-  const bookLinks = container.querySelectorAll("ul li a");
+  const bookLinks = container.querySelectorAll('ul li a');
   assert.strictEqual(bookLinks.length, 5);
   assert.strictEqual(bookLinks[0].getAttribute('href'), '/fullstack-graphql');
   assert.strictEqual(bookLinks[1].getAttribute('href'), '/fullstack-react-with-typeScript');
@@ -179,7 +179,7 @@ test('books renders paging links', () => {
       container
     );
   });
-  const pagingLinks = container.querySelectorAll("ol li a");
+  const pagingLinks = container.querySelectorAll('ol li a');
   assert.strictEqual(pagingLinks.length, 3);
   assert.strictEqual(pagingLinks[0].getAttribute('href'), null);
   assert.strictEqual(pagingLinks[1].getAttribute('href'), '/our-books/2');
@@ -237,7 +237,7 @@ test('books renders paging links for page 2', () => {
       container
     );
   });
-  const pagingLinks = container.querySelectorAll("ol li a");
+  const pagingLinks = container.querySelectorAll('ol li a');
   assert.strictEqual(pagingLinks.length, 3);
   assert.strictEqual(pagingLinks[0].getAttribute('href'), '/our-books');
   assert.strictEqual(pagingLinks[1].getAttribute('href'), null);
@@ -295,7 +295,7 @@ test('books link navigates to book details', () => {
       container
     );
   });
-  const bookLinks = container.querySelectorAll("ul li a");
+  const bookLinks = container.querySelectorAll('ul li a');
   Simulate.click(bookLinks[1]);
   assert.strictEqual(stateNavigator.stateContext.state.key, 'book');
   assert.strictEqual(stateNavigator.stateContext.data.slug, 'fullstack-react-with-typeScript');
@@ -352,10 +352,46 @@ test('books paging link navigates to page of books', () => {
       container
     );
   });
-  const pagingLinks = container.querySelectorAll("ol li a");
+  const pagingLinks = container.querySelectorAll('ol li a');
   Simulate.click(pagingLinks[1]);
   assert.strictEqual(stateNavigator.stateContext.state.key, 'books');
   assert.strictEqual(stateNavigator.stateContext.data.page, 2);
 });
 
-// test book state!!
+test('book renders contents link', () => {
+  const stateNavigator = createStateNavigator();
+  stateNavigator.navigate('book', {slug: 'fullstack-graphql'});
+  const fetch = mockFetch({
+    '/api/book?slug=fullstack-graphql' : {
+      slug: 'fullstack-graphql',
+      title: 'Fullstack GraphQL',
+      cover: 'https://fullstack-graphql-cover.jpg',
+      description: 'The Complete Guide to Writing GraphQL Servers and Clients with TypeScript',
+      authors: [
+        {
+          name: 'Gaetano Checinski',
+          photo: 'https://gaetano-checinski.jpg',
+          bio: `I'm a Software Architect and Entrepreneur from London. I've been a consultant for adopting React and GraphQL in companies like The Times, YLD, and others.\nI've encountered tons of real-world challenges implementing GraphQL in the real-world and I've condensed my learnings down into this book.`
+        },
+        {
+          name: 'Roy Derks',
+          photo: 'https://roy-derks.jpg',
+          bio: `I lead engineering teams at Vandebron and teach folks how to use React and GraphQL through conference speaking and writing.\nImplementing a flexible, optimized GraphQL server is tricky, but in this book, I'll show you how.`
+        },
+      ],
+    }
+  });
+  const container = document.createElement('div');
+  act(() => {
+    ReactDOM.render(
+      <FetchContext.Provider value={fetch}>
+        <NavigationHandler stateNavigator={stateNavigator}>
+          <App />
+        </NavigationHandler>
+      </FetchContext.Provider>,
+      container
+    );
+  });
+  const commentLink = container.querySelector('a');
+  assert.strictEqual(commentLink.getAttribute('href'), '/fullstack-graphql/contents');
+});
