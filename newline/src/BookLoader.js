@@ -14,10 +14,12 @@ function BookLoader({slug, contents}) {
       fetch(`/api/contents?slug=${encodeURIComponent(slug)}`)
     );
   }, [contents, slug, fetch]);
-  return <Book
-    bookResource={bookResource}
-    contentsResource={contentsResource}
-    contents={contents} />
+  return (
+    <Book
+      bookResource={bookResource}
+      contentsResource={contentsResource}
+      contents={contents} />
+  )
 }
 
 export default BookLoader;
