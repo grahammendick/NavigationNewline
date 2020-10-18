@@ -244,6 +244,67 @@ test('books renders paging links for page 2', () => {
   assert.strictEqual(pagingLinks[2].getAttribute('href'), '/our-books/3');
 });
 
+test('books filter navigates to filtered page 1', () => {
+  const stateNavigator = createStateNavigator();
+  stateNavigator.navigate('books', {page: 2})
+  const fetch = mockFetch({
+    '/api/books?page=2&title=' : {
+      books: [
+        {
+          slug: 'fullstack-graphql',
+          title: 'Fullstack GraphQL',
+          cover: 'https://fullstack-graphql-cover.jpg',
+          description: 'The Complete Guide to Writing GraphQL Servers and Clients with TypeScript',
+        },
+        {
+          slug: 'fullstack-react-with-typeScript',
+          title: 'Fullstack React with TypeScript',
+          cover: 'https://fullstack-react-with-typeScript-cover.png',
+          description: 'Learn Pro Patterns for Hooks, Testing, Redux, SSR, and GraphQL',
+        },
+        {
+          slug: 'security-from-zero',
+          title: 'Security from Zero',
+          cover: 'https://security-from-zero-cover.png',
+          description: 'Practical Security for Busy People',
+        },
+        {
+          slug: 'fullstack-rust',
+          title: 'Fullstack Rust',
+          cover: 'https://fullstack-rust-cover.jpg',
+          description: 'The Complete Guide to Building Apps with Rust',
+        },
+        {
+          slug: 'fullstack-nodejs',
+          title: 'Fullstack Node.js',
+          cover: 'https://fullstack-nodejs-cover.png',
+          description: 'The Complete Guide to Building Production Apps with Node.js',      
+        }                
+      ],
+      total: 12,
+    }
+  });
+  const container = document.createElement('div');
+  act(() => {
+    ReactDOM.render(
+      <FetchContext.Provider value={fetch}>
+        <NavigationHandler stateNavigator={stateNavigator}>
+          <App />
+        </NavigationHandler>
+      </FetchContext.Provider>,
+      container
+    );
+  });
+  const filterInput = container.querySelector('input');
+  const filterButton = container.querySelector('button');
+  filterInput.value = 'react';
+  Simulate.change(filterInput);
+  Simulate.click(filterButton);
+  assert.strictEqual(stateNavigator.stateContext.state.key, 'books');
+  assert.strictEqual(stateNavigator.stateContext.data.page, 1);
+  assert.strictEqual(stateNavigator.stateContext.data.title, 'react');
+});
+
 test('books link navigates to book details', () => {
   const stateNavigator = createStateNavigator();
   stateNavigator.navigate('books')
