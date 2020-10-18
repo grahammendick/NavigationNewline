@@ -395,3 +395,43 @@ test('book renders contents link', () => {
   const commentLink = container.querySelector('a');
   assert.strictEqual(commentLink.getAttribute('href'), '/fullstack-graphql/contents');
 });
+
+test('book contents link navigates to book with contents', () => {
+  const stateNavigator = createStateNavigator();
+  stateNavigator.navigate('book', {slug: 'fullstack-graphql'});
+  const fetch = mockFetch({
+    '/api/book?slug=fullstack-graphql' : {
+      slug: 'fullstack-graphql',
+      title: 'Fullstack GraphQL',
+      cover: 'https://fullstack-graphql-cover.jpg',
+      description: 'The Complete Guide to Writing GraphQL Servers and Clients with TypeScript',
+      authors: [
+        {
+          name: 'Gaetano Checinski',
+          photo: 'https://gaetano-checinski.jpg',
+          bio: `I'm a Software Architect and Entrepreneur from London. I've been a consultant for adopting React and GraphQL in companies like The Times, YLD, and others.\nI've encountered tons of real-world challenges implementing GraphQL in the real-world and I've condensed my learnings down into this book.`
+        },
+        {
+          name: 'Roy Derks',
+          photo: 'https://roy-derks.jpg',
+          bio: `I lead engineering teams at Vandebron and teach folks how to use React and GraphQL through conference speaking and writing.\nImplementing a flexible, optimized GraphQL server is tricky, but in this book, I'll show you how.`
+        },
+      ],
+    }
+  });
+  const container = document.createElement('div');
+  act(() => {
+    ReactDOM.render(
+      <FetchContext.Provider value={fetch}>
+        <NavigationHandler stateNavigator={stateNavigator}>
+          <App />
+        </NavigationHandler>
+      </FetchContext.Provider>,
+      container
+    );
+  });
+  const commentLink = container.querySelector('a');
+  Simulate.click(commentLink);
+  assert.strictEqual(stateNavigator.stateContext.state.key, 'book');
+  assert.strictEqual(stateNavigator.stateContext.data.contents, true);
+});
