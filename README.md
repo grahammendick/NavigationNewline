@@ -58,6 +58,18 @@ We still haven't defined a route for the ‘books’ State yet. But it doesn't m
 Running `npm start` allows the book list to be paged.
 
 ## Programmatic Navigation
+The student learns the imperative navigation API (NavigationLink is the declarative API).
+
+We add a search input and submit button so the user can filter the list of books by their title. We add a title prop to the Books component and include it in the useEffect dependency list.
+
+We useContext to get hold of the stateNavigator. In the submit click handler we call the navigate function, passing the search filter in navigation data, `stateNavigator.navigate('books', { title: 'react' })`. We destructure the title from the navigation data in renderView and pass it to the Books component.
+
+Running `npm start` allows the book list to be filtered. We show that the filter is lost when paging through the list.
+
+We update all the paging hyperlinks to include the title, `<NavigationLink stateKey=”books” navigationData={{ page: 3, title }} />`.
+
+Running `npm start` allows the book list to be filtered and paged.
+
 ## Routes
 ## Refresh Navigation
 ## Code Splitting
