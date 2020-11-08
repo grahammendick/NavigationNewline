@@ -53,7 +53,7 @@ We update the App component to pass the navigation data to the renderView functi
 
 We don't have to convert it from a string to a number because the Navigation router passes strongly typed data. We prove this by adding PropType validation to the Books component that checks the page prop is a number.
 
-We still haven't defined a route for the ‘books’ State yet. But it doesn't matter, we can navigate and pass data without one. Later on, we'll configure a route that makes the page number a route parameter. The Navigation router will automatically update the URLs of the paging hyperlinks. 
+We still haven't defined a route for the 'books' State yet. 'ut i' doesn't matter, we can navigate and 'pass data without one. Later' on, we'll configure a route that makes the page number a route parameter. The Navigation router will automatically update the URLs of the paging hyperlinks. 
 
 Running `npm start` allows the book list to be paged.
 
@@ -71,6 +71,27 @@ We update all the paging hyperlinks to include the title, `<NavigationLink state
 Running `npm start` allows the book list to be filtered and paged.
 
 ## Routes
+The student learns how to generate any URL they want without making any code changes.
+
+The newline app is up and running. We can filter and page through newline's books. But how does it work when we haven't even configured a route for the 'books' State yet? It works because the Navigation router generates URLs for us automatically.  We turn on HTML5 history so it's easier to see what these auto-generated URLs look like.
+
+After running `npm start` and going to the third page of books, we take a look at the browser URL.  It says '/books?page=31_2'. Notice that the Navigation router has set the route to 'books'. Until we define a route, it uses the State key as the route name. 
+
+We configure the route of the 'books' State to be 'our-books' and run the app again. This time the URL says '/our-books?page=31_2'. We haven't had to change any code and the Navigation router now generates all URLs to match the route.
+
+The extra characters after the 3 in the URL are how the Navigation router tracks that the page parameter is a number. Remember that navigation data is strongly typed. We configure a default type of 'number' so that the Navigation router doesn't have to track it anymore. Running the app, the URL now says '/our-books?page=3'. Again, we note that we haven't made any code changes.
+
+By default the Navigation router passes the page parameter in the query string. We change it to a route parameter by setting the route to ‘our-books+/{page}’.  The + syntax indicates the page sub-route is optional -  it's blank when we navigate from the welcome view. Re-running the app, the URL says '/our-books/3'.
+
+We've changed the URL from '/books?page=31_2' to '/our-books/3' without touching any code. 
+
+When we first land on the books list the URL says '/our-books'. But if we go to page 2 then back to page 1 it changes to '/our-books/1' instead of '/our-books'. We fix this by configuring a default value of 1 for the page parameter. Default values aren't included in the URL.
+
+The Navigation router knows that the type of the page parameter is a number from its default value. So it's safe to drop the default type configuration. We also remove the default value of the page prop from the Book component. The default parameter value means the prop will never be blank.
+
+With set trackTypes to false on the 'books' State to complete the URL configuration.
+
+
 ## Refresh Navigation
 ## Code Splitting
 ## Nested UI
