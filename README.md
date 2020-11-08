@@ -91,8 +91,23 @@ The Navigation router knows that the type of the page parameter is a number from
 
 With set trackTypes to false on the 'books' State to complete the URL configuration.
 
-
 ## Refresh Navigation
+The student learns how to make components that contain hyperlinks reusable across views.
+
+To make a reusable Pager component we have to remove any information specific to the books view from the paging hyperlinks. 
+
+The paging hyperlinks navigate from the 'books' State to the 'books' State. Navigation that stays on the same view is called refresh navigation. We change these paging hyperlinks to use RefreshLinks instead of NavigationLinks. The RefreshLink sets the destination State to be the current State so we don’t have to specify it, `<RefreshLink navigationData={{ page: 3, title }} />`.
+
+The pager hyperlinks keep track of the title filter so that it’s not lost when paging through the books. Instead of putting that responsibility on the pager hyperlinks we ask the RefreshLink to remember the filter for us, `<RefreshLink navigationData={{ page: 3 }} includeCurrentData={true} />`.
+
+The paging hyperlinks don’t hold anything specific to the books listing anymore. We extract them into a Pager component which we’ll reuse in another view that displays newline’s tutorials.
+
+We add a 'tutorials' State, give the page a default value of 1 and define a route of ‘our-tutorials’. We create a Tutorials component with a page prop and a useEffect that fetches a page of tutorials from the pre-built REST API. We drop in the reusable Pager component. 
+
+Running `npm start` allows us to page through newline’s books and tutorials.
+
+The student can see the Pager component is reused across views even though the routes are different. The page is a route parameter on the books view and a query string parameter on the tutorials view. The URL to the 3rd page of books is '/our-books/3'. The URL to the 3rd page of tutorials is '/our-tutorials?page=3'.
+
 ## Code Splitting
 ## Nested UI
 ## Unit Testing
