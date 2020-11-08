@@ -126,4 +126,16 @@ We create a BookLoader component that lazy loads the Book component and fetches 
 Rerunning the app, the network tab shows that the Book component is code split and the details fetch no longer waits for the load to complete.
 
 ## Nested UI
+The student learns how to create a nested UI without waterfalls.
+
+We turn the book details view into a nested UI by adding a hyperlink that reveals the book's table of contents. The hyperlink passes a 'show' indicator in navigation data, `<RefreshLink navigationData={{ show: ‘contents’ }} includeCurrentData={true} />`. We create a Contents component that fetches a book's table of contents from the REST API. The Book component renders the Contents component when the show indicator is set.
+
+Running the app with the network tab open, it's good to see that the table of contents aren't fetched until they're needed - when the hyperlink is clicked. But reloading the web page, with the contents expanded, uncovers a waterfall. The table of contents fetch doesn't begin until the Book component code is loaded and the book details request returns. Because the fetch is inside the Contents component, it can't start until the component renders.
+
+We fetch the table of contents inside the BookLoader component instead of the Contents component. That way the fetch runs in parallel with the book details fetch. We pass the Promise into the Contents component so that it renders the table when the fetch completes. Checking the network tab again shows that the waterfall has disappeared with all three requests starting together.
+
+We managed to remove the waterfall because, although the UI is nested, the route configuration isn't. The flat configuration means the BookLoader component handles all URLs to the ‘book' State. The BookLoader component receives all the navigation data, including the ‘show’ indicator, so it can start the nested fetch immediately.
+
+The UI is nested but the route isn't yet. When the table of contents is expanded for the 'Fullstack React' book, for example, then the URL says 'book?slug=fullstack-react&show=contents'. We turn this into a nested URL by configuring a route of '/our-book/{slug}+/{show}'. Without touching any code at all, the URL changes to '/our-book/fullstack-react/contents'.
+
 ## Unit Testing
