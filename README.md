@@ -25,8 +25,23 @@ In the upcoming modules, we build a simplified version of the newline website. O
 
 We have a Book component that renders a book's details. To reduce the JavaScript bundle size, we don't load the component code until the user selects a book. But if we fetch the book's details when the Book component mounts then the fetch can't start until the JavaScript code has loaded. Running requests in sequence like this creates a waterfall effect and slows down the app. We want to load the component code and fetch the data in parallel. We ask the student how they would fix this problem with the React Router. The course covers the Navigation router's solution and shows how it even works for nested routes and data.
 
-
 ## Getting Started
+The student learns how to set up the Navigation router and link between views.
+
+We use Create React App to initialise the example, `npx create-react-app newline`. Then install the 'navigation' and 'navigation-react' packages from npm.
+
+We'll add two views to our newline app. A view that displays a welcome message and another that lists newline's books. We create a StateNavigator and pass it an array of States. There's one State per view - a 'welcome' State for the first view and a 'books' State for the second.
+
+We create Welcome and Books components that render the view content. Inside a useEffect, the Books component fetches the list from a pre-built REST API. We attach renderView functions to the 'welcome' and 'books' States that return these components, for example, `books.renderView = () => <Books />`.
+
+We wrap the app in a NavigationHandler component to set up the Navigation context. Whenever the context changes we render the view for the current State. We assign the 'welcome' State the empty route and call start on the stateNavigator. This makes the 'welcome' State the current one when the app first loads. 
+
+Running `npm start` displays the welcome message.
+
+We add a hyperlink inside the welcome message that navigates to the book list. We haven't decided what the 'books' route is yet. But it doesn't matter because we can still link to it without defining a route. We don't hard-code URLs with the Navigation router. We tell the Navigation router we want to go to the 'books' State and let it worry about the URL for now. In a later lesson, we'll configure the route and the Navigation router will automatically update the hyperlink's URL to match. We build the hyperlink using the NavigationLink component, `<NavigationLink stateKey=”books” />`.
+
+Running `npm start` displays the welcome message and hyperlink. Clicking the link displays the list of newline's books.
+
 ## Strongly Typed Data
 ## Programmatic Navigation
 ## Routes
