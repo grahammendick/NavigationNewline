@@ -43,6 +43,20 @@ We add a hyperlink inside the welcome message that navigates to the book list. W
 Running `npm start` displays the welcome message and hyperlink. Clicking the link displays the list of newline's books.
 
 ## Strongly Typed Data
+The student learns that they pass strongly typed data when navigating. There's no need to convert values to and from strings.
+
+The REST API only returns five books at a time. We'll add numbered hyperlinks so the user can page through all the books. We add a page prop to the Books component and give it a default value of 1. Including this page prop in the useEffect dependencies ensures the fetch runs when the page changes.
+
+We build the hyperlink to the 3rd page, for example, by passing the page number 3 in navigation data. We don't have to convert it to a string because we pass strongly typed data with the Navigation router, `<NavigationLink stateKey=”books” navigationData={{ page: 3 }} />`.
+
+We update the App component to pass the navigation data to the renderView function.  We change the renderView function to take the page number from navigation data and pass it into the Books component, `books.renderView = ({ page }) => <Books page={page} />`.
+
+We don't have to convert it from a string to a number because the Navigation router passes strongly typed data. We prove this by adding PropType validation to the Books component that checks the page prop is a number.
+
+We still haven't defined a route for the ‘books’ State yet. But it doesn't matter, we can navigate and pass data without one. Later on, we'll configure a route that makes the page number a route parameter. The Navigation router will automatically update the URLs of the paging hyperlinks. 
+
+Running `npm start` allows the book list to be paged.
+
 ## Programmatic Navigation
 ## Routes
 ## Refresh Navigation
