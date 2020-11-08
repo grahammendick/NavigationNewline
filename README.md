@@ -139,3 +139,10 @@ We managed to remove the waterfall because, although the UI is nested, the route
 The UI is nested but the route isn't yet. When the table of contents is expanded for the 'Fullstack React' book, for example, then the URL says 'book?slug=fullstack-react&show=contents'. We turn this into a nested URL by configuring a route of '/our-book/{slug}+/{show}'. Without touching any code at all, the URL changes to '/our-book/fullstack-react/contents'.
 
 ## Unit Testing
+The student learns how to unit test the navigation.
+
+We don’t have to mock the Navigation router to test the navigation. It runs just the same in a test environment.
+
+We start by unit testing the welcome view. The Arrange step consists of navigating to the 'welcome' State, `stateNavigator.navigate('welcome')`. For the Act step we ReactDOM.render the app into the jsdom. We use the querySelector to assert that the welcome message is displayed and that the hyperlink says '/our-books'. In another test, we click the hyperlink and assert that it navigates to the 'book' State.
+
+Unit testing the other views works the same way except we create a fetch ContextProvider with a default value of window.fetch so we can mock the REST API.
